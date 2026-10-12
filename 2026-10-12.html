@@ -3,14 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>每日最新資訊（2026-10-12）</title>
 <style>
+  :root {
+    --bg: #eef1f5; --card: #ffffff; --ink: #1f2937; --muted: #6b7280;
+    --line: #e9edf3; --soft: #fbfcfe; --accent: #1d4ed8;
+    --nav-bg: rgba(255,255,255,.82);
+    --shadow: 0 2px 10px rgba(15,23,42,.06);
+    --shadow-lg: 0 10px 26px rgba(15,23,42,.13);
+    --badge-bg: #eef2ff; --badge-ink: #3730a3;
+    --warn-bg: #fef2f2; --warn-ink: #b91c1c;
+    --link: #2563eb;
+    --focus-bg: #fff8e6; --focus-line: #f0d48a; --focus-h: #92600a; --focus-tx: #5b4a1e;
+    --coach-bg: #ecfeff; --coach-line: #0891b2; --coach-tx: #155e75;
+    --kw-bg: #ecfdf5; --kw-line: #a7f3d0; --kw-tx: #065f46;
+    --pill-bg: #fef3c7; --pill-tx: #92400e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1120; --card: #131b2e; --ink: #e8edf5; --muted: #9aa5b8;
+      --line: #22304a; --soft: #0f1626; --accent: #6ea8ff;
+      --nav-bg: rgba(19,27,46,.78);
+      --shadow: 0 2px 12px rgba(0,0,0,.4);
+      --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
+      --badge-bg: #1c2a4d; --badge-ink: #b9c8ff;
+      --warn-bg: #3a1d1d; --warn-ink: #fca5a5;
+      --link: #6ea8ff;
+      --focus-bg: #241c0c; --focus-line: #6b5320; --focus-h: #e8b84b; --focus-tx: #d8c08a;
+      --coach-bg: #0e2a33; --coach-line: #22a3c0; --coach-tx: #8fd8ec;
+      --kw-bg: #0d2b1f; --kw-line: #1f5c40; --kw-tx: #7fe0ae;
+      --pill-bg: #2c230d; --pill-tx: #e8b84b;
+    }
+  }
   * { box-sizing: border-box; }
   body {
-    margin: 0; background: #eef1f5; color: #1f2937;
+    margin: 0; background: var(--bg); color: var(--ink);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
       "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
     line-height: 1.8;
+    transition: background .3s ease, color .3s ease;
   }
   .wrap { max-width: 700px; margin: 0 auto; padding: 20px 16px 48px; }
   @keyframes rise {
@@ -38,122 +70,145 @@
   .tabpanel { display: none; }
   #tab-overview:checked ~ #panel-overview,
   #tab-ai:checked ~ #panel-ai,
-  #tab-dive:checked ~ #panel-dive,
-  #tab-fengshui:checked ~ #panel-fengshui { display: block; animation: rise .45s ease; }
+  #tab-dive:checked ~ #panel-dive { display: block; animation: rise .45s ease; }
 
   nav.topnav {
     position: sticky; top: 8px; z-index: 50; display: flex; gap: 6px; overflow-x: auto;
-    background: rgba(255,255,255,.96); border-radius: 12px; padding: 8px 10px; margin-bottom: 16px;
-    box-shadow: 0 2px 10px rgba(15,23,42,.10); scrollbar-width: none;
+    background: var(--nav-bg);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border: 1px solid var(--line);
+    border-radius: 14px; padding: 8px 10px; margin-bottom: 16px;
+    box-shadow: var(--shadow); scrollbar-width: none;
   }
   nav.topnav::-webkit-scrollbar { display: none; }
   nav.topnav label {
-    white-space: nowrap; font-size: 13.5px; font-weight: 600; color: #374151;
+    white-space: nowrap; font-size: 13.5px; font-weight: 600; color: var(--muted);
     padding: 8px 13px; border-radius: 999px; cursor: pointer;
     transition: background .18s ease, color .18s ease; user-select: none;
   }
-  nav.topnav label:hover { background: #eef2ff; color: #1d4ed8; }
+  nav.topnav label:hover { background: var(--badge-bg); color: var(--accent); }
   #tab-overview:checked ~ nav.topnav label[for="tab-overview"],
   #tab-ai:checked ~ nav.topnav label[for="tab-ai"],
-  #tab-dive:checked ~ nav.topnav label[for="tab-dive"],
-  #tab-fengshui:checked ~ nav.topnav label[for="tab-fengshui"] { background: #1d4ed8; color: #fff; }
+  #tab-dive:checked ~ nav.topnav label[for="tab-dive"] { background: #1d4ed8; color: #fff; }
+  @media (prefers-color-scheme: dark) {
+    #tab-overview:checked ~ nav.topnav label[for="tab-overview"],
+  #tab-ai:checked ~ nav.topnav label[for="tab-ai"],
+  #tab-dive:checked ~ nav.topnav label[for="tab-dive"] { background: #2f5fe0; color: #fff; }
+  }
 
   header.hero {
+    position: relative; overflow: hidden;
     background: linear-gradient(135deg, #0f172a, #1e3a8a, #334155, #0f172a);
     background-size: 300% 300%;
     animation: heroShift 14s ease-in-out infinite alternate;
-    color: #fff; border-radius: 18px; padding: 26px 22px; margin-bottom: 20px;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, .25);
+    color: #fff; border-radius: 20px; padding: 28px 22px; margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .3);
+    border: 1px solid rgba(255,255,255,.08);
   }
-  header.hero h1 { margin: 0 0 6px; font-size: 22px; letter-spacing: 1px; }
+  header.hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(420px 160px at 12% -10%, rgba(96,165,250,.35), transparent 65%),
+      radial-gradient(380px 150px at 92% 112%, rgba(251,191,36,.20), transparent 65%);
+  }
+  header.hero > * { position: relative; }
+  header.hero h1 { margin: 0 0 6px; font-size: 23px; letter-spacing: 1px; font-weight: 800; }
   header.hero p { margin: 4px 0 0; font-size: 14px; opacity: .92; }
   .dateline {
-    display: inline-block; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35);
+    display: inline-block; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.3);
     font-size: 12.5px; padding: 3px 12px; border-radius: 999px; margin-top: 10px;
   }
 
+  /* ---- bento hub grid ---- */
+  .hubgrid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 620px) {
+    .hubgrid { grid-template-columns: 1fr 1fr; }
+    .hubgrid > label.bigcard:first-child { grid-column: 1 / -1; }
+  }
   label.bigcard {
-    display: flex; align-items: center; gap: 14px; background: #fff; border-radius: 14px;
-    padding: 16px 18px; margin-bottom: 12px; color: inherit; cursor: pointer;
-    box-shadow: 0 2px 10px rgba(15, 23, 42, .06); border-left: 5px solid #9ca3af;
+    display: flex; align-items: center; gap: 14px; background: var(--card); border-radius: 16px;
+    padding: 17px 18px; color: inherit; cursor: pointer;
+    box-shadow: var(--shadow); border: 1px solid var(--line); border-left: 5px solid #9ca3af;
     transition: transform .18s ease, box-shadow .18s ease;
   }
-  label.bigcard:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(15,23,42,.12); }
+  label.bigcard:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
   .bigcard .emoji { font-size: 30px; flex-shrink: 0; }
-  .bigcard .btext { flex: 1; }
+  .bigcard .btext { flex: 1; min-width: 0; }
   .bigcard .btitle { display: block; font-size: 16px; font-weight: 700; }
-  .bigcard .bsub { display: block; font-size: 13px; color: #6b7280; line-height: 1.6; margin: 2px 0 6px; }
+  .bigcard .bsub { display: block; font-size: 13px; color: var(--muted); line-height: 1.6; margin: 2px 0 6px; }
   .upd { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px;
-    padding: 2px 11px; background: #eef2ff; color: #3730a3; }
-  .bigcard .go { font-size: 20px; color: #9ca3af; flex-shrink: 0; }
+    padding: 2px 11px; background: var(--badge-bg); color: var(--badge-ink); }
+  .bigcard .go { font-size: 20px; color: var(--muted); flex-shrink: 0; opacity: .7; }
 
   section.seccard {
-    background: #fff; border-radius: 16px; margin: 4px 0 6px; padding: 20px 18px;
-    box-shadow: 0 2px 10px rgba(15, 23, 42, .06); border-top: 5px solid #9ca3af;
+    background: var(--card); border-radius: 18px; margin: 4px 0 6px; padding: 20px 18px;
+    box-shadow: var(--shadow); border: 1px solid var(--line); border-top: 5px solid #9ca3af;
   }
-  .sechead h2 { margin: 0 0 4px; font-size: 20px; }
-  .sechead p { margin: 0 0 14px; font-size: 13.5px; color: #6b7280; }
+  .sechead h2 { margin: 0 0 4px; font-size: 20px; letter-spacing: .5px; }
+  .sechead p { margin: 0 0 14px; font-size: 13.5px; color: var(--muted); }
   .focus {
-    background: #fff8e6; border: 1px solid #f5d67b; border-radius: 12px;
+    background: var(--focus-bg); border: 1px solid var(--focus-line); border-radius: 14px;
     padding: 14px 16px; margin-bottom: 16px;
   }
-  .focus h3 { margin: 0 0 6px; font-size: 14.5px; color: #92600a; }
-  .focus ol { margin: 0; padding-left: 20px; font-size: 14px; color: #5b4a1e; }
+  .focus h3 { margin: 0 0 6px; font-size: 14.5px; color: var(--focus-h); }
+  .focus ol { margin: 0; padding-left: 20px; font-size: 14px; color: var(--focus-tx); }
   .focus li { margin: 4px 0; }
   details.dsec {
-    border: 1px solid #eef1f5; border-radius: 12px; margin-bottom: 12px; overflow: hidden;
+    border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+    background: var(--card);
   }
   details.dsec summary {
     list-style: none; cursor: pointer; padding: 13px 16px;
     font-size: 15.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;
-    transition: background .2s ease; user-select: none; background: #fbfcfe;
+    transition: background .2s ease; user-select: none; background: var(--soft);
   }
   details.dsec summary::-webkit-details-marker { display: none; }
-  details.dsec summary:hover { background: #f1f5f9; }
-  details.dsec summary .chev { margin-left: auto; font-size: 12px; color: #9ca3af; transition: transform .25s ease; }
+  details.dsec summary:hover { filter: brightness(.97); }
+  details.dsec summary .chev { margin-left: auto; font-size: 12px; color: var(--muted); transition: transform .25s ease; }
   details.dsec[open] summary .chev { transform: rotate(180deg); }
   details.dsec .dbody { padding: 4px 12px 12px; }
   .item {
-    border-left: 4px solid #e5e7eb; border-radius: 8px;
-    padding: 11px 13px; margin: 10px 0; background: #fbfcfe;
+    border-left: 4px solid var(--line); border-radius: 10px;
+    padding: 11px 13px; margin: 10px 0; background: var(--soft);
     transition: transform .18s ease, box-shadow .18s ease;
   }
-  .item:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(15,23,42,.10); }
-  .item h4 { margin: 0 0 5px; font-size: 15px; line-height: 1.55; color: #111827; }
-  .item p { margin: 0 0 7px; font-size: 13.5px; color: #4b5563; }
+  .item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .item h4 { margin: 0 0 5px; font-size: 15px; line-height: 1.55; color: var(--ink); }
+  .item p { margin: 0 0 7px; font-size: 13.5px; color: var(--muted); }
   .coach {
-    background: #ecfeff; border: 1px dashed #0891b2; border-radius: 8px;
-    font-size: 12.5px; color: #155e75; padding: 7px 11px; margin: 0 0 7px;
+    background: var(--coach-bg); border: 1px dashed var(--coach-line); border-radius: 10px;
+    font-size: 12.5px; color: var(--coach-tx); padding: 7px 11px; margin: 0 0 7px;
   }
   .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; }
-  .date-badge { background: #eef2ff; color: #3730a3; border-radius: 999px; padding: 2px 10px; font-weight: 600; }
-  .tag-warn { background: #fef2f2; color: #b91c1c; border-radius: 999px; padding: 2px 10px; font-weight: 600; }
-  .meta a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  .date-badge { background: var(--badge-bg); color: var(--badge-ink); border-radius: 999px; padding: 2px 10px; font-weight: 600; }
+  .tag-warn { background: var(--warn-bg); color: var(--warn-ink); border-radius: 999px; padding: 2px 10px; font-weight: 600; }
+  .meta a { color: var(--link); text-decoration: none; font-weight: 600; }
   .meta a:hover { text-decoration: underline; }
   .kw { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 2px 6px; }
   .kw span {
-    background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46;
+    background: var(--kw-bg); border: 1px solid var(--kw-line); color: var(--kw-tx);
     font-size: 13.5px; font-weight: 600; border-radius: 999px; padding: 5px 14px;
   }
   .infocard {
-    background: #fbfcfe; border: 1px solid #eef1f5; border-radius: 10px;
+    background: var(--soft); border: 1px solid var(--line); border-radius: 14px;
     padding: 14px 16px; margin: 10px 0;
   }
   .infocard h4 { margin: 0 0 6px; font-size: 15px; }
-  .infocard p, .infocard li { font-size: 13.5px; color: #4b5563; }
+  .infocard p, .infocard li { font-size: 13.5px; color: var(--muted); }
   .infocard ul { margin: 6px 0 0; padding-left: 20px; }
   .infocard li { margin: 4px 0; }
   .pill {
     display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px;
-    padding: 3px 11px; background: #fef3c7; color: #92400e; margin-bottom: 8px;
+    padding: 3px 11px; background: var(--pill-bg); color: var(--pill-tx); margin-bottom: 8px;
   }
   .secfoot { text-align: center; margin-top: 12px; }
   label.totop {
-    display: inline-block; color: #2563eb; cursor: pointer;
-    font-size: 13px; font-weight: 600; border: 1px solid #bfdbfe; border-radius: 999px; padding: 6px 18px;
-    background: #fff; transition: background .2s ease; user-select: none;
+    display: inline-block; color: var(--link); cursor: pointer;
+    font-size: 13px; font-weight: 600; border: 1px solid var(--line); border-radius: 999px; padding: 6px 18px;
+    background: var(--card); transition: filter .2s ease; user-select: none;
   }
-  label.totop:hover { background: #eff6ff; }
+  label.totop:hover { filter: brightness(.96); }
   /* 分頁切換時內容逐張浮入 */
   .tabpanel .item, .tabpanel .infocard { animation: rise .5s ease backwards; }
   .tabpanel .dbody .item:nth-child(1) { animation-delay: .04s; }
@@ -168,7 +223,7 @@
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
   }
-  footer.pagefoot { text-align: center; font-size: 12px; color: #9ca3af; margin-top: 26px; line-height: 1.9; }
+  footer.pagefoot { text-align: center; font-size: 12px; color: var(--muted); margin-top: 26px; line-height: 1.9; opacity: .8; }
 </style>
 </head>
 <body>
@@ -177,13 +232,11 @@
   <input class="tabradio" type="radio" name="dtabs" id="tab-overview" checked>
   <input class="tabradio" type="radio" name="dtabs" id="tab-ai">
   <input class="tabradio" type="radio" name="dtabs" id="tab-dive">
-  <input class="tabradio" type="radio" name="dtabs" id="tab-fengshui">
 
   <nav class="topnav">
     <label for="tab-overview">🏠 總覽</label>
     <label for="tab-ai">🤖 AI新聞</label>
     <label for="tab-dive">🤿 潛水新聞</label>
-    <label for="tab-fengshui">🧭 風水命理</label>
   </nav>
 
   <div class="tabpanel" id="panel-overview">
@@ -192,9 +245,10 @@
       <p>撳上面導航或下面卡片，即切換分類（純 CSS，免 JS）</p>
       <span class="dateline"><span class="livedot"></span>2026-10-12 · 今日版</span>
     </header>
+    <div class="hubgrid">
     <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">OpenAI GPT-6＋Intelligent UI 全面鋪開 ChatGPT · Google 10-9 起收緊 Gemini 免費版 · Super Micro 偷運案承包商認罪＋中國 AI 模型僅 3.6% 公開安全測試</span><br><span class="upd">更新：2026-10-12</span></span><span class="go">→</span></label>
 <label class="bigcard anim" for="tab-dive" style="border-left-color:#0891b2"><span class="emoji">🤿</span><span class='btext'><span class='btitle'>🤿 潛水新聞</span><span class="bsub">帛琉「水下衝突」彈頭報警 · 馬爾代夫蜜月夫婦溺亡 · Flores 強流 4 潛水員漂流 24 小時獲救</span><br><span class="upd">更新：2026-10-12</span></span><span class="go">→</span></label>
-<label class="bigcard anim" for="tab-fengshui" style="border-left-color:#d97706"><span class="emoji">🧭</span><span class='btext'><span class='btitle'>🧭 風水命理知識</span><span class="bsub">知識庫首次建立完成；本月戌月月星九紫入中，月五黃在北；2027丁未年盤三源交叉核實</span><br><span class="upd">更新：2026-10-12</span></span><span class="go">→</span></label>
+    </div>
   </div>
 
   <div class="tabpanel" id="panel-ai"><section class="seccard anim" style="border-top-color:#2563eb"><div class="sechead">
@@ -353,55 +407,6 @@
     </div>
   </div>
 </details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
-<div class="tabpanel" id="panel-fengshui"><section class="seccard anim" style="border-top-color:#d97706"><div class="sechead">
-  <h2>🧭 風水命理知識</h2>
-  <p>有出處 · 獨立覆核 · 結論分級標示</p>
-</div>
-<div class="infocard">
-  <span class="pill">新增</span>
-  <h4>📚 知識庫首次建立完成</h4>
-  <p>九運總覽（2024–2043）・2026 丙午年流年飛星・2027 丁未年流年飛星・2026／2027 流月飛星表・節氣交接日・八字格局基礎・玄空／三元／八宅／形家派別對照，全部入庫。</p>
-  <ul>
-    <li>出處：典籍（《沈氏玄空學》《淵海子平》《三命通會》蔣大鴻《水龍經》）＋ 通勝月紫白訣 ＋ 網上三源交叉</li>
-    <li>適用派別：各節分別註明</li>
-    <li>驗證級別：<b>已核實</b>（全部計算經獨立 agent 覆核；2027 年盤另經 mingli.ru 十二個月表＋兩位師傅影片交叉）</li>
-  </ul>
-</div>
-<div class="infocard">
-  <h4>📅 本月重點：2026 戌月（寒露 10/8 → 立冬 11/7）</h4>
-  <ul>
-    <li>月星<b>九紫入中</b>；月五黃在北（年星六白同宮）；年五黃在南兼太歲同宮，正南忌動土 —— 出處：紫白飛星月盤；玄空飛星；<b>已核實</b></li>
-    <li>月二黑在西（年星三碧同宮） —— 出處：同上；吉凶斷語屬派別詮釋；<b>推斷</b></li>
-  </ul>
-</div>
-<div class="infocard">
-  <h4>🔮 2027 丁未年前瞻（已三源交叉核實）</h4>
-  <ul>
-    <li>年星九紫入中；北方五黃；西方二黑＋三煞疊加；南方四綠木火通明 —— 出處：廖俊景師傅 2027 九宮飛星影片／mingli.ru 年月疊盤；玄空飛星；<b>已核實</b></li>
-    <li>丁未月（農曆六月，約 7/7–8/7）九紫入中伏吟：西方年二黑＋月二黑重疊兼三煞，北方年五黃＋月五黃重疊 —— 出處：紫微斗數 2027 羊年運程影片＋mingli.ru 七月欄完全吻合；<b>已核實</b></li>
-    <li>太歲西南（未）、歲破東北（丑）、三煞西（申酉戌） —— 出處：三合局推導；<b>已核實</b></li>
-  </ul>
-</div>
-<div class="infocard">
-  <h4>🛠️ 誠實修正留痕</h4>
-  <p>月飛星初版誤用「每月順行遞增」，經已發布嘅 2027 年十二個月盤表＋師傅影片交叉核實後，更正為<b>每月中宮逆行一位</b>（2026 戌月實為九紫入中，唔係七赤）。計錯認錯，唔為交貨作答案。</p>
-  <ul>
-    <li>出處：mingli.ru 2027 年月飛星表（十二個月逐月覆算）</li>
-    <li>驗證級別：<b>已核實</b></li>
-  </ul>
-</div>
-<div class="infocard">
-  <h4>⏳ 下一個節氣：霜降（10 月 23 日）</h4>
-  <p>而家處於寒露 → 霜降之間（戌月）；寒露已於 10 月 8 日 14:28 交節。2027 年 3 月後節氣日期待紫金山天文台／通勝發布，現標「待核實」。</p>
-  <ul>
-    <li>出處：TVBS 2026 年 24 節氣表；寒露時刻經聯合報／ETtoday／緯來三方報道一致</li>
-    <li>驗證級別：<b>已核實</b>（日期）；2027 年 3 月後為<b>不確定</b></li>
-  </ul>
-</div>
-<div class="infocard">
-  <h4>📥 等你導入個人資料</h4>
-  <p>你導入個人八字＋家居坐向／平面圖之後，呢個欄目會轉做個人化流年／流月分析模式。個人資料只存你 workspace，永不上公開頁。</p>
-</div></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
 
   <footer class="pagefoot">
     每日自動更新 · 所有內容附來源 · 僅供參考<br>
