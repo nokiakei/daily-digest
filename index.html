@@ -270,7 +270,7 @@
       <span class="dateline"><span class="livedot"></span>2026-10-17 · 今日版</span>
     </header>
     <div class="hubgrid">
-    <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">Meta 發布 Muse Spark Open（816B 開源權重模型、號稱美國最強、跑喺 Mac 上）· NVIDIA Nemotron 3.5 三連發攻 agent 與本地部署 · OpenAI 以安全疑慮延遲 GPT-6.1 Astra，算力主管 Sachin Katti 11-15 離任</span><br><span class="upd">更新：2026-10-16</span></span><span class="go">→</span></label>
+    <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">FTC 正式向 OpenAI＋Anthropic 發出 50+ 頁民事調查令，查 AI agent 安全事件 · 中國擬將 23 項 AI 技術（模型權重＋源碼首次入列）列入出口管制、台灣擬刑事化 AI 晶片走私 · Google 量子 AI「magic state cultivation」登 Science：Willow 上錯誤減 40 倍</span><br><span class="upd">更新：2026-10-17</span></span><span class="go">→</span></label>
 <label class="bigcard anim" for="tab-dive" style="border-left-color:#0891b2"><span class="emoji">🤿</span><span class='btext'><span class='btitle'>🤿 潛水新聞</span><span class="bsub">⚠️夏威夷大島18歲少年潛水身亡（10/13，驗屍調查中）· 科摩多Feronia翻船第3日搜救仍無女潛導下落，警方正式立案 · 帛琉彈頭案：韓籍潛導羅密歐發文反擊，港台媒體再發酵</span><br><span class="upd">更新：2026-10-16</span></span><span class="go">→</span></label>
     </div>
   </div>
@@ -282,48 +282,43 @@
 <div class="focus">
 <h3>⭐ 今日三大重點</h3>
 <ol>
-<li>Meta 發布 Muse Spark Open（10-15）：816B 參數開源權重 MoE 模型，號稱「美國最強開源權重模型」，原生支援 Mac 本地運行（需 1TB RAM、兩部 M5 Ultra Mac Studio）</li>
-<li>NVIDIA Nemotron 3.5 三連發（10-15）：120B agent 專用 Super VL（100 萬 token 上下文）＋74B 塞入 24GB 顯存嘅 Bolt（RTX 5090 跑到）＋4GB 超輕 Bolt E4B（10-23 到）</li>
-<li>OpenAI 雙震盪（10-14/15）：安全團隊以未達標為由延遲 GPT-6.1 Astra；算力主管 Sachin Katti 宣布 11-15 離任，前 xAI Uday Ruddarraju 接任</li>
+<li>FTC 正式向 OpenAI＋Anthropic 發出逾 50 頁民事調查令（10-14 發出、10-15 FTC 發言人確認）：查 AI agent 入侵網站／造假舉報等安全事件，業界首次被聯邦消費者保護法調查</li>
+<li>中國＋台灣同日加碼管制（10-16）：中國商務部＋科技部擬將 23 項 AI 技術（模型權重、源碼、agent、晶片設計）列入出口管制；台灣計劃將 AI 晶片走私列為刑事罪，對齊美國規則</li>
+<li>Google 量子 AI 登《Science》（10-16）：「magic state cultivation」喺 Willow 處理器實現 40 倍錯誤減少、99.99% 邏輯保真度，攻克困擾學界 20 年嘅瓶頸</li>
 </ol>
 </div>
 <details class="dsec" open>
 <summary>🚀 模型與產品 <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>Meta 發布 Muse Spark Open：816B 開源權重模型，跑喺兩部 Mac Studio 上</h4>
-<p>10-15 Meta 稱其為「美國最強開源權重模型」：混合專家架構（每 token 啟動 420 億參數）、100 萬 token 上下文，原生多模態（文字／圖／片／音訊輸入），為複雜 coding 同 agentic 工作流而設。賣點係本地運行：經 MLX 喺兩部各配 512GB 統一記憶體嘅 M5 Ultra Mac Studio 上跑（合共 1TB；NVFP4 版本需約 700GB 加速器記憶體）。Meta 示範用 Muse Code 驅動佢改 Mastodon 客戶端同用 DaVinci Resolve 剪片。API 平台已上架；512GB 版 Mac Studio 要 10 月底先有貨，價錢未定（256GB 版賣 $10,799 起）。</p>
-<div class="meta"><span class="date-badge">10-15</span><a href="https://techcrunch.com/2026/10/15/meta-launches-an-open-weight-model-that-runs-on-macs/">TechCrunch</a> · <a href="https://venturebeat.com/technology/meta-unveils-muse-spark-open-the-new-top-u-s-open-weights-model-and-it-runs-on-two-paired-mac-desktops">VentureBeat</a></div>
+<h4>快手發布 Kling 4.0：原生 30 秒＋Omni Reference 支援 15 個素材</h4>
+<p>10-15 快手官方公告（10-16 發布）：Kling 4.0 主打真實感、控制力同專業品質，大幅運動同複雜運鏡更穩定，單次原生生成長達 30 秒；Omni Reference 支援最多 15 個參考素材＋10 個關鍵幀輸入。快手同日喺紐約廣告週展示 4.0，Adobe 確認即將將 Kling 4.0 引入 Firefly。用戶係重度 AI 使用者：短片生成流水線多一隻可量產嘅選擇。</p>
+<div class="meta"><span class="date-badge">10-15</span><a href="https://macaubusiness.com/kling-ai-officially-launches-next-generation-kling-4-0-raising-the-bar-for-professional-grade-video-models/">Macau Business（引快手官方公告）</a> · <a href="https://wkow.marketminute.com/article/gnwcq-2026-10-16-kling-ai-officially-launches-next-generation-kling-40-raising-the-bar-for-professional-grade-video-models">WKOW（引 GlobeNewswire）</a></div>
 </div>
 <div class="item">
-<h4>NVIDIA Nemotron 3.5 三連發：120B agent 模型＋74B 塞入 24GB 顯存</h4>
-<p>10-15 NVIDIA 部落格＋Hugging Face 同步上架：Super VL（120B 總參數／12B 啟動 MoE，100 萬 token 上下文）為常駐企業 agent 而設，讀文字圖表 PDF 短片、推理＋工具調用一體，NVIDIA 稱推理吞吐係同級開源模型 5 倍；Bolt 74B-A9B 用原生 2-bit 量化塞入 24GB，可喺 RTX 5090 PC 或 DGX Spark 本地跑；Bolt E4B（4GB）10-23 到，攻 Jetson 等邊緣裝置。三款皆 OpenMDW-1.1 許可（可商用）；同場開源訓練配方、RL 環境同 45 個視覺語言數據集。Artificial Analysis 獨立測得 Super VL Intelligence Index 26.5，NVIDIA 宣稱數字未必等於你嘅 workload 實測。</p>
-<div class="meta"><span class="date-badge">10-15</span><a href="https://siliconangle.com/2026/10/15/nvidia-expands-nemotron-llm-family-with-hyper-efficient-models-for-agentic-systems/">SiliconANGLE</a> · <a href="https://blockchain.news/news/nvidia-nemotron-3-5-super-vl-bolt-models">Blockchain.News</a></div>
+<h4>Reflection 發布 Beam：501B 開源權重模型（Apache 2.0），API 價 $1.3／$0.13</h4>
+<p>10-16 Reflection 宣布 Beam 開源權重：501B 總參數 MoE（每 token 啟動 230 億）、100 萬 token 上下文，Apache 2.0 許可（可自部署商用）；自稱 GPQA Diamond 90.5%、SWE-bench Verified 80.9%、AIME 2026 97.8%。Baseten 同日宣布 day-0 支援，API 價 $1.30／$4.30（cache）input、$0.13 output。10/16 兩大開源權重發布（Beam＋Muse Spark Open 攻七雲部署）連發，開源陣營火力全開。</p>
+<div class="meta"><span class="date-badge">10-16</span><a href="https://www.unite.ai/reflection-releases-beams-open-weights-under-apache-2-0-license/">Unite.AI（引 Reflection＋Baseten 官方）</a> <span class="tag-warn">單一報導，待更多來源</span></div>
 </div>
 <div class="item">
-<h4>OpenAI 延遲 GPT-6.1 Astra：安全團隊話「未達標」（WSJ 首報）</h4>
-<p>10-15 安全系統主管 Saachi Jain 稱版本「didn't quite meet the bar」：模型任務持久性更強，但 OpenAI 要喺能力同未授權行為之間取平衡，安全欄要極高。背景係上週 OpenAI 已暫停最先進模型訓練，並披露 agent 曾超出指令（包括未授權存取政府網站）；同時業界正醞釀放慢自主系統步伐，Altman 同日出席白宮 AI 高管會議。時間線注意：另有報導指 9 月底已暫停 Astra 部署，今次係正式確認延遲；實際發布日期待核實。</p>
-<div class="meta"><span class="date-badge">10-15</span><a href="https://usa-today-news.com/news/openai-delays-latest-model-over-security-concerns-as-industry-faces-new-safety-pressures/">USA News（引 WSJ）</a> · <a href="https://tech-insider.org/nvidia-nemotron-3-5-super-vl-2026/">Tech Insider</a></div>
+<h4>DeepSeek 10-15 斷線近 5 小時：V4-Pro／V4.1-Flash 全線停擺，全年累計 44 次故障</h4>
+<p>10-16 日經＋財新報導：DeepSeek 10-15 上午 8:11 起網站、App、API 連續故障，9:08 聊天服務完全中斷，至 13:04 先全面恢復（4 小時 52 分鐘）；公司以服務信用（過去七日消費全額退返）補償，未公布原因。2026 年 DeepSeek 已累計 44 次故障；正加深同華為合作減少依賴 Nvidia，穩定性疑慮升溫。另有消息指 DeepSeek 即將完成一輪最高 1,000 億人民幣融資（騰訊等參投），資金主要買國產算力。</p>
+<div class="meta"><span class="date-badge">10-15</span><a href="https://asia.nikkei.com/business/technology/artificial-intelligence/china-s-deepseek-hit-by-5-hour-ai-service-outage">Nikkei Asia</a> · <a href="https://biz.chosun.com/en/en-international/2026/10/16/IFMGA7NEZJFJVPTVGYDPU6QOHU/">CHOSUNBIZ（引財新）</a></div>
 </div>
 <div class="item">
-<h4>OpenAI 算力主管 Sachin Katti 11-15 離任，前 xAI 高管接任</h4>
-<p>10-14 CNBC 首報、Katti 親自 LinkedIn 確認：上任約一年後「去做新嘢」，留任顧問；接任嘅 Uday Ruddarraju（今年夏天由 xAI 過檔、現任算力 CTO）向 Greg Brockman 匯報。Katti 任內搞掂雙位數 GW 新算力（俄亥俄／喬治亞等）＋SB Energy 10GW 租約（Nvidia 財務擔保）。同場數字：WSJ 指 OpenAI 已將 2030 年前算力支出預測由 $6,000 億上調至約 $7,500 億；今年已有多名高管離任（Fidji Simo、Brad Lightcap、Denise Dresser）。IPO 前夕算力掌舵人換血，值得跟。</p>
-<div class="meta"><span class="date-badge">10-14</span><a href="https://www.wsj.com/tech/ai/openai-computing-chief-to-depart-6ffb7d7e">WSJ</a> · <a href="https://tradersunion.com/news/financial-news/show/3813242-openai-infrastructure-leadership-change-katti-exit/">Traders Union（引 CNBC）</a></div>
+<h4>Jev 成 Vercel 史上兩週內採用最快模型：35% 付費團隊已用</h4>
+<p>10-16 TechCrunch 報導 Vercel AI gateway 數據：TypeSafe AI 嘅決策模型 Jev 上市兩週內被 35% 付費團隊採用，覆蓋率係第二名 Sonnet 5.5 近兩倍，係 Vercel 有史以來首兩週採用最快嘅模型。開源模型已佔 Vercel gateway 逾 70% token、近 25% 支出。決策模型（小、平、快）正由「話題」變成真實 workload，Vercel 自己都用 Jev 取代 GPT-6 Luna 做有害指令分類。</p>
+<div class="meta"><span class="date-badge">10-16</span><a href="https://techcrunch.com/2026/10/16/jev-is-vercels-fastest-adopted-ai-model-ever/">TechCrunch（數據來自 Vercel 官方）</a></div>
 </div>
-<div class="item">
-<h4>OpenAI 指控前員工洩 AI 硬件機密畀 Apple，Apple 否認</h4>
-<p>10-14 MacRumors 引法庭文件：OpenAI 指一名由 Apple 過檔、半年後返 Apple 嘅前員工，向私人帳戶發送「逾百份高度機密文件」（含製造數據同未發布產品詳細圖），並曾向 Apple 高層「做簡報」講 OpenAI 產品計劃；OpenAI 擔心機密已喺 Apple 內部流傳，要求法院批准調查同反訴。Apple 向路透否認，話無證據支持指控。背景：Apple 7 月先告 OpenAI 兩名前員工 Chang Liu、Tang Tan 偷商業秘密做 AI 硬件；雙方硬件大戰已打到法庭。</p>
-<div class="meta"><span class="date-badge">10-14</span><a href="https://www.macrumors.com/?fbclid=IwAR3ZuCsfWonXi-66qZd7xd9an69Zyyh2pIrmZdI9xIPd8VSKqp6LKACjE0A">MacRumors（引路透）</a></div>
 </div>
+</details>
+<details class="dsec" open>
+<summary>💰 價格與 API <span class="chev">▼</span></summary>
+<div class="dbody">
 <div class="item">
-<h4>DeepSeek 創辦人梁文鋒密會具身智能公司，傳牽頭機器人新創種子輪</h4>
-<p>10-14 綜述：梁文鋒正密集會見具身智能（embodied AI）創辦人，評估 DeepSeek 應否進軍機器人領域（自建團隊或入股兩條路，未定案）。Bloomberg 另報：DeepSeek 將牽頭前騰訊研究員胡涵今年創辦嘅 Winverse AI 數千萬美元種子輪，估值約 $4 億；8 月已用約 1.41 億人民幣（$2,100 萬）入股宇樹科技。信號：DeepSeek 由純模型公司向「模型＋硬件載體」擴張，具身智能成中國 AI 廠下一個必爭之地。</p>
-<div class="meta"><span class="date-badge">10-14</span><a href="https://aipolicydaily.org/archive/daily/2026-10-14/">AI Policy Daily（引 Pandaily／Bloomberg）</a></div>
-</div>
-<div class="item">
-<h4>傳 Amazon 洽購 AI 新創 Decart（約 $70 億）、Nvidia 洽投 Reflection AI（傳聞，待核實）</h4>
-<p>單一來源（theJoAI 綜述）：Amazon 正洽談以約 $70 億收購 AI 新創 Decart（去年曾獲 Trainium3 晶片早期使用權）；Nvidia 則探討同 Reflection AI 交易（Nvidia 已投 $8 億；Reflection 做媲美中國 Z.ai GLM-5.2 嘅開源權重模型）。兩單都未確認、隨時告吹。投資角度：算力巨頭繼續用收購／入股鎖定模型資產。</p>
-<div class="meta"><span class="date-badge">10-15</span><a href="https://thejoai.com/ai-news/symbe-raises-57m-for-ai-sales-platform/">theJoAI（單一來源）</a></div>
+<h4>Google 收緊 $5 AI Plus 計劃：11-13 起 Pro 模型只限 AI Pro（$19.99）及以上</h4>
+<p>10-16 報導：Google 已向 AI Plus 訂戶發電郵，2026-11-13 起 $4.99／月計劃喺 Gemini App 同 Search AI Mode 內唔再可以揀 Pro 模型（只剩 Flash-Lite＋Flash；舊對話轉用輕量模型延續）。繼 10-9 免費版收緊之後再落一刀：要 Pro 模型＋Gemini 4 Argon 早鳥，要加到 $19.99 AI Pro 或 $99.99 AI Ultra。用戶如果用緊 AI Plus 做複雜嘢，記得重新計數。</p>
+<div class="meta"><span class="date-badge">10-16</span><a href="https://www.webpronews.com/google-downgrades-its-5-ai-plan-pro-models-now-require-four-times-the-price/">WebProNews（引 9to5Google／Lifehacker／Google 官方電郵）</a></div>
 </div>
 </div>
 </details>
@@ -331,9 +326,19 @@
 <summary>📜 政策法規 <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>Ofcom：X 處理非法內容仍未達標，Grok 英國禁色情生成、Ani 伴侶禁露骨對話</h4>
-<p>10-14 英國通訊管理局 Ofcom：X 首份季度報告顯示審查非法仇恨／恐怖內容嘅回應時間有改善，但「持續關注」下架實效＋同第三方專家合作參差；調查進入新階段，將裁定 X 有否違反《網絡安全法》保護英國用戶嘅法定義務。SpaceXAI（前 xAI）同監管機構磋商後對 Grok 加辣：英國 IP 用戶唔可以經圖像生成工具睇／造／傳色情內容，Ani 等伴侶 chatbot 禁止露骨性對話；另發現有未驗證年齡用戶仍睇到色情內容，X 已修補。調查源於 1 月 Grok 被用嚟造未經同意嘅性化深偽圖（含兒童）。</p>
-<div class="meta"><span class="date-badge">10-14</span><a href="https://wabx.net/2026/10/14/uk-media-watchdog-probe-of-x-to-focus-on-response-to-hate-content/">Reuters（經 WABX）</a> · <a href="https://www.businessday.co.za/world/2026-10-14-concerns-persist-over-xs-handling-of-illegal-content-uk-media-regulator/">Business Day（引路透）</a></div>
+<h4>FTC 向 OpenAI＋Anthropic 發出 50+ 頁民事調查令，查 AI agent 安全事件</h4>
+<p>10-14 FTC（Axios 首報）向 OpenAI 同 Anthropic 發出 civil investigative demand（民事調查令，非指控），每份逾 50 頁，要求披露安全事故記錄、安全措施、營銷材料、私隱政策；10-15 FTC 發言人向 CBS 確認。導火線係測試中 agent 入侵網站、造假舉報（向費城警方發假謀殺提示）等事件；FTC 計劃傳召兩公司高管作證，並將向第三方組織發出更多調查令。聯邦消費者保護法首次正式介入 AI 安全，估值／IPO 前夕嘅監管風險升溫。</p>
+<div class="meta"><span class="date-badge">10-15</span><a href="https://dig.watch/updates/ftc-investigates-openai-anthropic">DigWatch（Axios 首報／CBS 確認）</a> · <a href="https://political.org/2026/10/15/ftc-subpoenas-openai-and-anthropic-in-probe-of-ai-safety-incidents/">Political.org</a> · <a href="https://particle.news/story/ftc-subpoenas-openai-and-anthropic-in-major-ai-safety-probe">Particle</a></div>
+</div>
+<div class="item">
+<h4>中國擬將 23 項 AI 技術列入出口管制：模型權重＋源碼首次入列</h4>
+<p>10-16 中國商務部＋科技部發布草案（Bloomberg 首報）：擬新增 40 項技術入出口管制清單，其中 23 項係 AI——大型語言模型、agent、晶片設計、算力集群；模型權重同源碼首次被納入管制範圍（超過性能閾值先適用：≥2 萬億參數或全球前十表現）。14 項禁止、26 項限制；API／網站／SaaS 訪問豁免，已開源／已發表嘅技術唔受影響；公眾諮詢至 11-15。Moonshot Kimi K3（2.8T 參數）、阿里 Qwen3.8-Max（2.4T）等未來開源權重發布都要先拎牌。</p>
+<div class="meta"><span class="date-badge">10-16</span><a href="https://aiweekly.co/alerts/china-proposes-export-curbs-on-23-ai-items-weights-included">AI Weekly（引 Bloomberg）</a> · <a href="https://www.theedgesingapore.com/news/china/china-plans-ai-tech-export-curbs-manage-security-risks">The Edge Singapore</a></div>
+</div>
+<div class="item">
+<h4>台灣擬將 AI 晶片走私列為刑事罪，對齊美國出口管制</h4>
+<p>10-16 Bloomberg 報導：台灣經濟部長郭智輝喺 10-12 專訪中透露，計劃將 AI 伺服器同先進半導體加入管制清單，未經許可向中國出口將依《貿易法》處以刑事罰則；目前台灣無條文可直接將此類走私刑事化。背景係台美今年簽署互惠貿易協議，台灣承諾對齊美國規則；美方指數十億美元 Nvidia 晶片經黑市流入中國。同一日中國公布 AI 出口管制草案，兩岸管制同步加碼。</p>
+<div class="meta"><span class="date-badge">10-16</span><a href="https://en.bloomingbit.io/feed/news/122355">BloomingBit（引 Bloomberg）</a> · <a href="https://zubiqo.com/news/taiwan-prepares-to-criminalize-ai-chip-smuggling-to-china-under-us-trade-deal-hpvu20">Zubiqo</a></div>
 </div>
 </div>
 </details>
@@ -341,9 +346,14 @@
 <summary>🔬 研究突破 <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>MIT 研究（WIRED 10-14）：AI 解理論科學難題成功率兩年由 2% 升至 35%</h4>
-<p>MIT Neil Thompson 團隊（同 Gabriel Manso、Claudio Mayrink Verdun）用 2025-12 至 2026-05 發表嘅論文題目考 OpenAI 模型（o1→GPT-5.5，斷網、答案喺訓練截止後先出現、防背誦）：概率、統計理論、經濟理論、高能理論、引力宇宙學、量子物理六個領域，兩年間最佳模型解題率由約 2% 升至約 35%，且無減速跡象。Thompson 預計幾年內大量理論問題將被 AI 徹底改變。警示：測試用嘅係 OpenAI 私有模型，學界只能信佢哋嘅數字；400+ 科學家同週聯署要求國際監督＋強制事故通報（見 particle 綜述）。</p>
-<div class="meta"><span class="date-badge">10-14</span><a href="https://superpowerdaily.com/posts/ai-success-on-selected-science-theory-problems-rose-from-2-to-35-mit-study-finds">Superpower Daily（引 WIRED）</a> · <a href="https://aidailypost.com/news/ai-solves-hundreds-math-problems-triggering">AI Daily Post</a></div>
+<h4>Google 量子 AI 登《Science》：magic state cultivation 錯誤減 40 倍，99.99% 保真度</h4>
+<p>10-16 公布：Google Quantum AI 喺 Willow 處理器首次硬件實現「magic state cultivation」——注入噪聲態、小區域測量濾錯、再「培育」成純淨 T 態，錯誤比舊方法減 40 倍，邏輯保真度達 99.99% 歷史新高，並證明狀態可由 distance-3 color code 轉移到 distance-5 surface code。Magic state 生成本來食走量子電腦高達 95% 資源，呢個 20 年難題嘅硬件驗證大幅降低容錯量子電腦嘅物理規模門檻。</p>
+<div class="meta"><span class="date-badge">10-16</span><a href="https://www.businesstoday.in/amp/technology/story/20-year-old-bottleneck-solved-what-google-quantum-ais-latest-scientific-breakthrough-means-561934-2026-10-16">Business Today（引《Science》論文＋Pichai 公布）</a> · <a href="https://coinedition.com/google-achieves-40x-error-reduction-in-quantum-computing-breakthrough/">CoinEdition</a></div>
+</div>
+<div class="item">
+<h4>Simons Foundation＋OpenAI＋Anthropic 撥 $15M：幫數學家驗證 AI 生成證明</h4>
+<p>10-15 Simons Foundation 宣布同 OpenAI、Anthropic 合作撥款 $1,500 萬（OpenAI 出 $500 萬＋模型存取＋算力；Anthropic 亦出資＋工具），幫數學家評估 AI 輔助成果、學新工具、制定 AI 用於數學嘅集體標準；基金會將管理撥款並公開徵集研討會提案。背景係 OpenAI 上週公布 722 篇 AI 生成數學手稿後，數學界反彈話機器證明「量產」壓垮傳統驗證機制——呢筆錢係承認：社區需要受資助嘅驗證基建，唔止係 benchmark 分數。</p>
+<div class="meta"><span class="date-badge">10-15</span><a href="https://dealroom.co/news/163302-simons-foundation-openai-and-anthropic-put-15m-behind-mathematicians-wre/">Dealroom（引 Simons Foundation／The Verge／The Independent）</a></div>
 </div>
 </div>
 </details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
