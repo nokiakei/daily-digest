@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>每日最新資訊（2026-10-16）</title>
+<title>每日最新資訊（2026-10-17）</title>
 <style>
   :root {
     --bg: #eef1f5; --card: #ffffff; --ink: #1f2937; --muted: #6b7280;
@@ -41,7 +41,8 @@
     margin: 0; background: var(--bg); color: var(--ink);
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
       "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.95;
     transition: background .3s ease, color .3s ease;
   }
   .wrap { max-width: 700px; margin: 0 auto; padding: 20px 16px 48px; }
@@ -142,11 +143,11 @@
   .bigcard .go { font-size: 20px; color: var(--muted); flex-shrink: 0; opacity: .7; }
 
   section.seccard {
-    background: var(--card); border-radius: 18px; margin: 4px 0 6px; padding: 20px 18px;
+    background: var(--card); border-radius: 18px; margin: 4px 0 6px; padding: 26px 22px;
     box-shadow: var(--shadow); border: 1px solid var(--line); border-top: 5px solid #9ca3af;
   }
-  .sechead h2 { margin: 0 0 4px; font-size: 20px; letter-spacing: .5px; }
-  .sechead p { margin: 0 0 14px; font-size: 13.5px; color: var(--muted); }
+  .sechead h2 { margin: 0 0 8px; font-size: 22px; letter-spacing: .5px; }
+  .sechead p { margin: 0 0 16px; font-size: 14px; color: var(--muted); }
   .focus {
     background: var(--focus-bg); border: 1px solid var(--focus-line); border-radius: 14px;
     padding: 14px 16px; margin-bottom: 16px;
@@ -174,8 +175,8 @@
     transition: transform .18s ease, box-shadow .18s ease;
   }
   .item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
-  .item h4 { margin: 0 0 5px; font-size: 15px; line-height: 1.55; color: var(--ink); }
-  .item p { margin: 0 0 7px; font-size: 13.5px; color: var(--muted); }
+  .item h4 { margin: 0 0 6px; font-size: 16px; line-height: 1.6; color: var(--ink); }
+  .item p { margin: 0 0 8px; font-size: 14.5px; color: var(--muted); }
   .coach {
     background: var(--coach-bg); border: 1px dashed var(--coach-line); border-radius: 10px;
     font-size: 12.5px; color: var(--coach-tx); padding: 7px 11px; margin: 0 0 7px;
@@ -192,12 +193,35 @@
   }
   .infocard {
     background: var(--soft); border: 1px solid var(--line); border-radius: 14px;
-    padding: 14px 16px; margin: 10px 0;
+    padding: 18px 20px; margin: 16px 0;
   }
-  .infocard h4 { margin: 0 0 6px; font-size: 15px; }
-  .infocard p, .infocard li { font-size: 13.5px; color: var(--muted); }
-  .infocard ul { margin: 6px 0 0; padding-left: 20px; }
-  .infocard li { margin: 4px 0; }
+  .infocard h4 { margin: 0 0 10px; font-size: 16.5px; }
+  .infocard p, .infocard li { font-size: 14.5px; color: var(--muted); }
+  .infocard ul { margin: 8px 0 0; padding-left: 20px; }
+  .infocard li { margin: 7px 0; }
+  /* 運勢圖表：純 CSS 橫條，無 JS */
+  .meter { margin: 6px 0 2px; }
+  .meter .mrow { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+  .meter .mlabel { font-size: 15px; font-weight: 700; color: var(--ink); width: 88px; flex-shrink: 0; }
+  .meter .mbar { flex: 1; height: 13px; background: var(--line); border-radius: 999px; overflow: hidden; }
+  .meter .mfill { height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+  .meter .mfill.high { background: linear-gradient(90deg, #34d399, #10b981); }
+  .meter .mfill.low { background: linear-gradient(90deg, #fca5a5, #f87171); }
+  .meter .mval { font-size: 13px; font-weight: 700; color: var(--muted); width: 58px;
+    text-align: right; flex-shrink: 0; }
+  .verdict {
+    font-size: 17px; font-weight: 800; color: var(--ink); text-align: center;
+    padding: 12px 8px 4px; line-height: 1.7;
+  }
+  .do-dont { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .do-dont .dd { font-size: 14.5px; padding: 10px 14px; border-radius: 12px; line-height: 1.7; }
+  .do-dont .dd.do { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+  .do-dont .dd.dont { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+  @media (prefers-color-scheme: dark) {
+    .do-dont .dd.do { background: #0c2b22; border-color: #14532d; color: #a7f3d0; }
+    .do-dont .dd.dont { background: #2b1212; border-color: #7f1d1d; color: #fca5a5; }
+  }
   .pill {
     display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px;
     padding: 3px 11px; background: var(--pill-bg); color: var(--pill-tx); margin-bottom: 8px;
@@ -243,7 +267,7 @@
     <header class="hero anim">
       <h1>📰 每日最新資訊</h1>
       <p>撳上面導航或下面卡片，即切換分類（純 CSS，免 JS）</p>
-      <span class="dateline"><span class="livedot"></span>2026-10-16 · 今日版</span>
+      <span class="dateline"><span class="livedot"></span>2026-10-17 · 今日版</span>
     </header>
     <div class="hubgrid">
     <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">Meta 發布 Muse Spark Open（816B 開源權重模型、號稱美國最強、跑喺 Mac 上）· NVIDIA Nemotron 3.5 三連發攻 agent 與本地部署 · OpenAI 以安全疑慮延遲 GPT-6.1 Astra，算力主管 Sachin Katti 11-15 離任</span><br><span class="upd">更新：2026-10-16</span></span><span class="go">→</span></label>
