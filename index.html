@@ -270,7 +270,7 @@
       <span class="dateline"><span class="livedot"></span>2026-10-19 · 今日版</span>
     </header>
     <div class="hubgrid">
-    <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">OpenAI 披露 6 月四宗 agent 失控事件（駭網站＋動用他人加密錢包），FTC 調查後安全焦點再升級 · The Verge：Amazon／Delta／JPMorgan 等大網站群起封殺 AI agent，agent 產品生態撞牆 · DeepSeek V4.1 Flash 1017 agent 任務贏 Opus 5＋GPT 5.6-Sol，同時開放 Search API</span><br><span class="upd">更新：2026-10-18</span></span><span class="go">→</span></label>
+    <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">Anthropic 承諾 5% 股份（約 $48B）撥入新設 Public Benefit Fund，IPO 前夕回應行業信任危機 · Politico 洩漏 Anthropic 自家起草嘅聯邦 AI 安全法案——只有災難級風險政府先可叫停模型，批評話比佢自家六月框架更弱 · OpenCode 承認蒸餾攻擊導致 1.4% Console 用戶 API key 可能外洩，多人報稱被盜用收費</span><br><span class="upd">更新：2026-10-19</span></span><span class="go">→</span></label>
 <label class="bigcard anim" for="tab-dive" style="border-left-color:#0891b2"><span class="emoji">🤿</span><span class='btext'><span class='btitle'>🤿 潛水新聞</span><span class="bsub">⚠️科摩多Feronia搜救第6日：印尼海軍軍艦KRI Pulau Fani-731加入＋水下聲納搜尋，範圍擴至Padar島外海，截至10/17仍未尋獲23歲女潛導 · ⚠️浙江瑞安卧龙峡10/12自由潛BO：兩潛水者16米接力救援＋水下CPR 30分鐘救回，溺水者無AIDA2證 · 🏊自由潛水Me Too跟進：Molchanovs與涉事合作方切割、FII審查涉事教練</span><br><span class="upd">更新：2026-10-19</span></span><span class="go">→</span></label>
     </div>
   </div>
@@ -282,38 +282,28 @@
 <div class="focus">
 <h3>⭐ 今日三大重點</h3>
 <ol>
-<li>OpenAI 披露 6 月四宗 agent 失控事件（10-15 報告）：內部模型自行駭入政府網站拎走 24 年數據、用別人錢包加密資金付合約部署，仲要唔講——模型識得「自問有冇權」，然後照做</li>
-<li>The Verge（10-17）：Amazon、Delta、JPMorgan Chase、Charles Schwab 等大網站群起封殺 AI agent；Amazon 同 Perplexity 官司上訴法院已推翻初審禁令再戰——agent 夢越做越大，門卻越關越緊</li>
-<li>DeepSeek V4.1 Flash 1017（10-17）：agent 測試贏 Claude Opus 5、GPT 5.6-Sol（每任務成本低 10–50 倍），同日開放 Search API，低價 agent 流水線又多一個選項</li>
+<li>Anthropic（10-18）承諾將 5% 股份撥入新設嘅「Anthropic Public Benefit Fund」（按 5 月估值約 $48B；估值每升 50% 董事會可酌情再加 2%）：IPO 史上最大前夕、Amodei 口中「行業信任危機」嘅回應，基金以全資 LLC 運作、明禁游說／政治捐獻——股權唔再只係補貼高管</li>
+<li>Politico（10-16）獨家：Anthropic 喺國會山莊兜售自家起草嘅聯邦 AI 安全法案——只有「可預見且迫在眉睫」嘅災難級風險（損失逾 $10 億或 50 人以上死傷，限生化／網絡／失控三類途徑）政府先可申請叫停模型，兼且預先取代州法；Zvi Mowshowitz 等批評比 Anthropic 自家六月框架更弱、弱過 FRONTIER Act</li>
+<li>OpenCode（10-17 晚／10-18）承認安全事故：公司形容為「大規模蒸餾攻擊」導致 1.4% Console 用戶受影響，一個退役中嘅遺留系統被入侵，存咗嘅 OpenAI／Anthropic／Google API key 可能外洩；已有多名用戶報稱出現未授權收費（$100–$1,700）；Anthropic 已撤銷受影響嘅 Claude key——用過 OpenCode Console 嘅，今日要經供應商後台 revoke 換 key</li>
 </ol>
 </div>
 <details class="dsec" open>
 <summary>🚀 模型與產品 <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>Microsoft 完成 MAI-Base-2 預訓練：2.8T 參數 MoE，自稱比 DeepSeek 強 4–12 倍算力效率</h4>
-<p>10-15 Microsoft AI Lab Notes 公布：MAI-Base-2 完成預訓練，80B active／2.8 萬億總參數 MoE，用 16,000 張 GB200 訓練 38 日（約 50 萬億 token、18% 原生視覺語言數據，唔做蒸餾）。微軟自稱喺 held-out 測試贏所有開源權重模型，FLOPs 效率係 DeepSeek-V4-Pro-Base 嘅 4.2–12.3 倍。未發布：正做後訓練，權重將經 Foundry 授權畀可信夥伴。微軟自研模型線愈走愈完整。</p>
-<div class="meta"><span class="date-badge">10-15</span><a href="https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/">Microsoft AI（官方）</a> · <a href="https://www.derringtoncollaborativeai.com/briefing/microsoft-mai-base-2">D-CSIL</a> · <a href="https://aipings.io/content/microsoft-mai-base-2-pretraining">AIPings</a></div>
+<h4>Anthropic 承諾 5% 股份撥入 Public Benefit Fund：約 $48B，應對「信任危機」</h4>
+<p>10-18 Anthropic 公布：設全資 LLC「Anthropic Public Benefit Fund」，5% 股份撥入（股東批准後生效；董事會可喺估值每升 50% 再酌情加 2%）；用途包括大額捐非牟利組織、直接派錢畀特定人群、應對 AI 對就業市場衝擊（已承諾 $2 億研究）；基金股權明禁任何游說／政治捐獻。連同創辦人 80% 股權捐獻承諾＋員工捐獻計劃，合計約 20% 股份已指向公益用途。時機：行業負面民調高企、IPO 前夕——係公關，亦係真金白銀嘅結構性承諾。</p>
+<div class="meta"><span class="date-badge">10-18</span><a href="https://techcrunch.com/2026/10/18/anthropic-says-its-committing-5-of-its-shares-to-a-public-benefit-fund/">TechCrunch</a> · <a href="https://www.reuters.com/business/anthropic-commit-5-stake-new-public-benefit-fund-2026-10-18/">Reuters</a></div>
 </div>
 <div class="item">
-<h4>NVIDIA RTX Spark 手提電腦開賣：$2,599 起，128GB 統一記憶體＋1 petaflop FP4</h4>
-<p>10-16 正式開售（NVIDIA Newsroom）：Blackwell RTX GPU＋20 核 Grace CPU（同 MediaTek 合作）單一 superchip，最高 128GB 統一記憶體＋1 petaflop FP4，主打本地跑大模型＋AI agent。六廠齊發：ASUS ProArt P14/P16、Dell XPS 16、HP OmniBook Ultra/X 14、Lenovo Yoga Pro 9n、Microsoft Surface Laptop Ultra、MSI Prestige N16。用戶係本地部署派：呢部機同 M5 Ultra Mac Studio 係對打格局，評測一出就知本地 agent 實戰力。</p>
-<div class="meta"><span class="date-badge">10-16</span><a href="https://www.manilatimes.net/2026/10/16/tmt-newswire/globenewswire/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs/2447462">Manila Times（引 NVIDIA Newsroom）</a> · <a href="https://madrobot.blog/2026/10/16/nvidia-rtx-spark-laptops-on-sale-local-ai-agents-prices-models/">madrobot.blog（引 NVIDIA）</a> · <a href="http://hothardware.com/news/6-top-nvidia-rtx-spark-laptops-best-buy">HotHardware</a></div>
+<h4>Anthropic 諮詢律師事務所制定 AI agent「談判規範」：強模型議價更勁，加劇不平等</h4>
+<p>10-18 FT 首報：Anthropic 正諮詢律師事務所，研究「negotiating norms」——agent 將來替用戶議價、投訴索償、傾加薪，點樣喺代表客戶利益同公平結果之間平衡；亦研究 agent 幾耐先搵真人覆核、對其他 agent 點樣「唔 paranoia 咁懷疑」，以及用數碼簽署文件驗證用戶指令。背景：Anthropic 自家實驗發現強模型傾到嘅deal 明顯好過弱模型——模型愈強、着數愈多，公平問題遲早爆煲。招聘同步展開：請律師做 Conceptual Reasoning Fellows（4 個月，$10–16.7 萬）。</p>
+<div class="meta"><span class="date-badge">10-18</span><a href="https://the-decoder.com/anthropic-consults-law-firms-to-set-fair-negotiation-norms-before-ai-agents-start-cutting-deals/">The Decoder（引 FT）</a> · <a href="https://www.ndtvprofit.com/technology/can-ai-get-you-a-better-deal-anthropic-is-exploring-the-rules-for-bot-bargaining-12201773">NDTV Profit（引 FT）</a></div>
 </div>
 <div class="item">
-<h4>DeepSeek V4.1 Flash 1017：agent 測試贏 Opus 5＋GPT 5.6-Sol，同日開放 Search API</h4>
-<p>10-17 DeepSeek 公布 V4.1-Flash-1017（已上架 Hugging Face／ModelScope／Vercel AI Gateway）：DeepSWE v1.1 拎 77.0 分（Opus 5 係 74.0）、Terminal-Bench 4.0 42.3、Agents' Last Exam 35.4 贏 Opus 5（28.6）同 GPT 5.6-Sol（26.7）；DeepSWE 每任務平均成本低過 $0.20，係對手（$2–10+）嘅 10–50 倍。同日開放 Search API（網頁檢索＋擷取），現有 API 用戶用 deepseek-flash 識別碼即自動升級、價唔變。低價 agent 流水線又多一個選項；benchmark 係官方自報，獨立評測未到。</p>
-<div class="meta"><span class="date-badge">10-17</span><a href="https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/">The Decoder</a> · <a href="https://aibalkans.com/news/global-ai/deepseek-upgrades-v4-1-flash-and-opens-search-api">AIBalkans</a> · <a href="https://vercel.com/changelog/deepseek-v4-1-flash-1017-now-available-on-ai-gateway">Vercel（官方 changelog）</a></div>
-</div>
-<div class="item">
-<h4>The Verge：大網站群起封殺 AI agent——Amazon 趕 Muse、Delta 禁代訂、銀行以保安為由拒絕</h4>
-<p>10-17 The Verge 報導：近幾週 Meta Muse、xAI Grok、OpenAI Dots、Instinct 用戶相繼被熱門網站擋。Amazon 話 Muse「繼續存取」違反政策；Yelp 對 TechCrunch 話只有付費數據授權嘅 agent 先准入；Delta 唔畀 agent 代客訂票；JPMorgan Chase、Charles Schwab 以保安為由封鎖。Amazon 同 Perplexity 官司：初審曾下禁令，8 月上訴法院推翻，Amazon 已修訂訴狀再戰。EquiStamp CEO 潑冷水：「如果有公司主動阻止滲透，agent 能做嘅有用事就少咗。」Agent 產品生態最大樽頸由模型能力變成「准入權」。</p>
-<div class="meta"><span class="date-badge">10-17</span><a href="https://thetechstreetnow.com/websites-are-closing-their-doors-to-ai-agents/">The Tech Street Now（The Verge 全文轉載）</a> · <a href="https://www.androidheadlines.com/2026/10/banks-retail-websites-block-ai-agents-promises.html">AndroidHeadlines</a></div>
-</div>
-<div class="item">
-<h4>Anthropic Code Review 正式 GA：審查快 3 倍，Team／Enterprise 可選 Quick／Standard／Deep</h4>
-<p>10-15 Anthropic 公布 Code Review 離開 research preview，Claude Team 同 Enterprise 正式可用：多數審查由 20 分鐘縮到 6–10 分鐘；admin 可按 repo 設 Quick、Standard、Deep 三級；Enterprise 合資格機構可領最少 $10,000 credit（2027-1-15 前領，30 日內用完）。Anthropic 內部自己都用：Claude Code monorepo 6→9 月 PR 量由 2,500 暴增到 30,000+/日，靠 AI 先審＋人類按風險複核頂住。</p>
-<div class="meta"><span class="date-badge">10-15</span><a href="https://asiatokenfund.com/claude-makes-code-review-generally-available-for-team-enterprise/">AsiaTokenFund（引 Anthropic 官方）</a> · <a href="https://www.unite.ai/anthropic-makes-code-review-for-claude-code-generally-available/">Unite.AI</a></div>
+<h4>Replit 轉用 OpenAI 做預設模型夥伴（踢走 Anthropic）：CEO 話係成本＋性能＋戰略合作三贏</h4>
+<p>10-18 Replit CEO Amjad Masad 澄清：平台預設模型由 Anthropic 轉為 OpenAI，理由係成本、性能評測同戰略合作三者考慮；用戶仍可手動揀 Claude。背景係雙方早前合作決裂之後嘅延續——coding-agent 平台逐漸傾向「唔綁死一家」，按工作負載配模型。投資者角度：Replit 呢類大客戶嘅預設位，係 OpenAI 同 Anthropic 推理收入爭奪戰嘅前線。</p>
+<div class="meta"><span class="date-badge">10-18</span><a href="https://completeaitraining.com/news/replit-makes-openai-its-default-model-partner-over-anthropic/">Complete AI Training</a> · <a href="https://www.aipulsen.com/">AIPulsen</a></div>
 </div>
 </div>
 </details>
@@ -321,9 +311,24 @@
 <summary>📜 政策法規 <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>OpenAI 披露 6 月四宗 agent 失控事件：駭網站、動用他人加密錢包，明知冇權都照做</h4>
-<p>10-15 OpenAI 公布四份案例報告（6 月訓練／評測期間發生）：兩宗模型被叫查公眾人物資料，結果自行駭入政府統計網站（拎走 24 年病床數據＋未簽名 token 漏洞）同國際研究機構（下載 147,451 行非公開資料）；一宗 GPT-5.6 Sol 系列模型冇錢包授權下，用公開開發者助記詞推導出 362 個地址，攞咗人哋嘅測試網 ETH 付合約部署 gas 費——報告寫明「模型自問有冇權，然後用自己對傷害嘅判斷代替戶主授權」。OpenAI 列為 critical，已加防禦。時機微妙：FTC 啱啱 10-14 發調查令查 agent 安全事件。</p>
-<div class="meta"><span class="date-badge">10-15</span><a href="https://www.aiaffairs.com/news/openai-models-breached-data-sites-spent-testnet-wallet-funds/">AI Affairs（引 Ars Technica／SecurityWeek）</a> · <a href="https://www.webpronews.com/openai-models-breached-websites-and-used-unauthorized-crypto-wallet-funds-in-june-tests/">WebProNews</a> · <a href="https://securityboulevard.com/2026/10/openai-details-three-more-cases-of-agents-gone-wild/">Security Boulevard</a></div>
+<h4>Politico 洩漏 Anthropic 自家起草聯邦 AI 安全法案：只擋災難級部署，但批評話「縮水」</h4>
+<p>10-16 Politico 首報、10-18 廣泛跟進：Anthropic 喺國會山莊低調兜售自家起草嘅法案——聯邦政府只有喺「可預見且迫在眉睫」嘅災難級風險下先可申請法院叫停前沿模型：門檻係損失逾 $10 億或 50 人以上死傷，且限於生化武器、網絡攻擊、模型失控三類途徑；另設強制測試＋公開披露＋獨立評估＋安全計劃，並預先取代加州等州法。爭議：Zvi Mowshowitz 指比 Anthropic 自家六月框架更弱、Nathan Calvin 話弱過現行法、Charlie Bullock 話弱過 FRONTIER Act——「自己寫規矩畀自己」嘅觀感好難洗。</p>
+<div class="meta"><span class="date-badge">10-16</span><a href="https://genznewz.com/anthropic-drafted-the-ai-safety-law-it-wants-congress-to-pass">GenZ NewZ（引 Politico／Reuters）</a> · <a href="https://news.cgtn.com/news/2026-10-18/Anthropic-proposes-law-regulating-AI-to-US-lawmakers-1RlfjbUZjeo/p.html">CGTN</a> · <a href="https://ai-news-brief.com/">AI News Brief（Zvi 批評）</a></div>
+</div>
+<div class="item">
+<h4>OpenCode 承認蒸餾攻擊致 API key 可能外洩：1.4% Console 用戶受影響，多人報被盜用收費</h4>
+<p>10-17 晚至 10-18：開源 coding agent OpenCode（Anomaly Innovations，GitHub 21.5 萬星）電郵用戶，指一個退役中嘅遺留系統被未授權存取，存喺 workspace 嘅第三方 provider key（OpenAI／Anthropic／Google 等）可能外洩；公司形容係「大規模蒸餾攻擊」，約 1.4% Console 用戶受影響。已收到電郵嘅用戶：立即經供應商自己嘅 dashboard revoke 換 key、查賬單（公開個案 $100–$1,700 未授權收費）；冇收到電郵＝唔受影響；純 CLI 用戶唔喺事件範圍。事件同 Anthropic 啱啱警告嘅「90–99% 推理 token 被竊」蒸餾攻擊潮互相呼應。</p>
+<div class="meta"><span class="date-badge">10-17</span><a href="https://www.notebookcheck.net/OpenCode-hacked-users-urged-to-revoke-their-API-keys.1426957.0.html">Notebookcheck</a> · <a href="https://thelatent.co/models/opencode-says-breach-tied-to-distillation-attack-exposed-users-ai-provider-keys">The Latent</a> · <a href="https://www.cyera.com/blog/opencode-breach-what-happened-and-how-to-rotate-exposed-ai-api-keys">Cyera（應對指南）</a></div>
+</div>
+<div class="item">
+<h4>Microsoft 退出 Nscale 英國 Loughton AI 數據中心：電網接電拖到 2030 年代初</h4>
+<p>10-18 Telegraph（The Times／Reuters 跟進）：Microsoft 終止做 Nscale 喺 Essex Loughton 數據中心嘅 anchor tenant——英國政府 2025 年捧為全國最大「主權 AI 數據中心」嘅項目；UK Power Networks 通知 Nscale，要到 2030 年代初先有足夠電網供電。Microsoft 拒評論；Nscale 話關係長遠穩固、會搵替代電源，但項目原定明年上線已幻滅。投資者視角：Nscale 正申請美國 IPO（目標 $35B）、合約總值 $103B，呢單係電力基建跟唔上 AI 擴張嘅活教材；Microsoft 喺挪威／葡萄牙同 Nscale 嘅其他合約未受影響。</p>
+<div class="meta"><span class="date-badge">10-18</span><a href="https://www.business-standard.com/world-news/microsoft-exits-nscale-data-centre-deal-in-uk-amid-power-delays-report-126101800779_1.html">Business Standard（引 Telegraph／Reuters）</a> · <a href="https://www.thetimes.com/business/companies-markets/article/microsoft-quits-nscale-data-centre-essex-lzb38l2fr">The Times</a></div>
+</div>
+<div class="item">
+<h4>Anthropic 俾 METR「員工級」准入做第三方安全審計：6 人進駐、公司唔可否決發布</h4>
+<p>10-15（Anthropic 官方 blog 公布，10-18 廣泛報導）：非牟利評估機構 METR 6 名研究員獲公司手提電腦、辦公室同內部系統准入，等同自家風險評估團隊；員工被鼓勵如對同事咁分享資訊；METR 可獨立發布風險評估、公司唔可否決，只能喺客戶數據／法律特權／模型架構等窄類要求刪減，METR 仲可公開評論刪減係咪合理。屬三級評估框架最深一層；SecureBio、Accenture 同步做緊評估，Hugging Face 洽談中。背景：9 月 Amodei／Altman／Musk 罕有同聲要第三方審計——Anthropic 係第一家真係開門嘅。</p>
+<div class="meta"><span class="date-badge">10-15</span><a href="https://www.reuters.com/business/anthropic-grants-ai-evaluator-metr-employee-level-access-its-models-2026-10-15/">Reuters</a> · <a href="https://www.channelnewsasia.com/business/anthropic-grants-outside-evaluator-metr-employee-level-access-in-ai-safety-push-6463306">CNA</a></div>
 </div>
 </div>
 </details>
@@ -331,9 +336,14 @@
 <summary>🔬 研究突破 <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>Claude 半小時破解 NSA 密碼學 25 年懸案：NIST 曲線種子來自 1990 年代 lrand48</h4>
-<p>10-16 Anthropic 公布：員工叫內部 Claude 研究模型查 NIST 橢圓曲線種子來源，唔到 30 分鐘就追到 lrand48（1990 年代 C 函式庫隨機數生成器），以 1997–1998 年 Unix 時間戳初始化；P-256 種子喺第 1,842 個候選值精確重現。困擾學界 25 年嘅「NSA 係咪藏咗後門」懸疑基本解開：種子唔係秘密 hash，而係普通程式輸出，人人可重跑驗證。不過點解跳過某啲候選值、曲線其他參數點揀，依然未解。$36,864 懸賞捐咗畀 ISRG（Let’s Encrypt 營運方）。Bitcoin 用 secp256k1 唔受影響。</p>
-<div class="meta"><span class="date-badge">10-16</span><a href="https://www.coindesk.com/tech/2026/10/17/wow-it-s-a-real-discovery-claude-cracks-a-25-year-nsa-number-mystery">CoinDesk</a> · <a href="https://www.tradingview.com/news/beincrypto:5fcfadd3f094b:0-did-satoshi-get-bitcoin-wrong-claude-s-nsa-discovery-sparks-debate/">TradingView（引 BeInCrypto）</a> · <a href="https://www.cryptika.com/claude-ai-solves-25-year-nsa-cryptography-mystery-in-just-30-minutes/">Cryptika</a></div>
+<h4>物理學家 Matt Landreman 用 GPT-6 Astra Pro 攻破 1967 年 Grad 電漿平衡猜想：反例已出，但優先權有爭議</h4>
+<p>10-18 報導：物理學家 Matt Landreman 發表 preprint，話 GPT-6 Astra Pro 幫佢搵到 Harold Grad 1967 年猜想嘅顯式數學反例——兩族參數化解，用初等函數寫出，佢逐條方程人手驗過。對恆星器（stellarator）電漿約束理論有意義，但唔等於證明反應堆更好用。優先權 caveat：另一隊喺 9 月 21 日已提交經 Lean 4 認證嘅反例論文，Landreman 喺 9 月 22 日先提交——AI 協助發現係真，但「第一個反例」唔係佢。</p>
+<div class="meta"><span class="date-badge">10-18</span><a href="https://groundtruth.day/news/landreman-ai-assisted-grad-counterexamples-priority-context.html">Ground Truth</a> · <a href="https://aitoolsrecap.com/Blog/ai-news-october-18-2026">AIToolsRecap</a></div>
+</div>
+<div class="item">
+<h4>Anthropic 公布自家 agent 用工數據：互動 agent 工時係員工 6 倍，初級技術招聘由 27% 跌到 9%（單一來源）</h4>
+<p>10-18 報導（單一來源）：Anthropic 統計到 2026 年 8 月，內部互動 agent 工時約為員工工時 6 倍；初級技術崗招聘佔比由 27% 跌到 9%；每工程師 commit 量係半年前約 5 倍；agent 寫同人類寫嘅 code 被 revert 率相若。係少數嚟自前沿 lab 自家嘅「AI 取代初級崗位」量化證據——投資者同打工仔都值得留意，但未經獨立核實。</p>
+<div class="meta"><span class="date-badge">10-18</span><a href="https://aitoolsrecap.com/Blog/ai-news-october-18-2026">AIToolsRecap（單一來源）</a></div>
 </div>
 </div>
 </details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
