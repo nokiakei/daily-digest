@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>每日最新資訊（2026-10-21）</title>
+<title>每日最新資訊（2026-10-22）</title>
 <style>
   :root {
     --bg: #eef1f5; --card: #ffffff; --ink: #1f2937; --muted: #6b7280;
@@ -267,10 +267,10 @@
     <header class="hero anim">
       <h1>📰 每日最新資訊</h1>
       <p>撳上面導航或下面卡片，即切換分類（純 CSS，免 JS）</p>
-      <span class="dateline"><span class="livedot"></span>2026-10-21 · 今日版</span>
+      <span class="dateline"><span class="livedot"></span>2026-10-22 · 今日版</span>
     </header>
     <div class="hubgrid">
-    <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">DeepSeek 開源生產級推理引擎 DeepInfer（10-20，Apache 2.0，支援 Nvidia SM100＋華為 Ascend 950） · Google＋Meta 聯手開源 TorchTPU：PyTorch 原生跑 TPU，vLLM/SGLang 一併上陣 · Tenstorrent 完成 $15 億 Series E，投後估值 $62 億</span><br><span class="upd">更新：2026-10-21</span></span><span class="go">→</span></label>
+    <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">OpenAI 模型登陸 Google Cloud Model Garden：三大美國雲全集齊，仲入埋 Antigravity＋Gemini Agent · AI 搵到史上最嚴重開源漏洞之一 PHP2Shell（CVE-2026-109618/619，CVSS 9.2），10-21 緊急 patch · Anthropic S-1 草稿曝光：上半年淨虧損逾 $800 億、未來算力開支或達 $7,500 億</span><br><span class="upd">更新：2026-10-22</span></span><span class="go">→</span></label>
 <label class="bigcard anim" for="tab-dive" style="border-left-color:#0891b2"><span class="emoji">🤿</span><span class='btext'><span class='btitle'>🤿 潛水新聞</span><span class="bsub">⚠️科摩多Feronia搜救進入最終日：五水域禁航＋軍艦聲納掃海底，截至10/18黃昏Jessica同船體仍未尋獲 · 🏝️帛琉彈頭案10/20官方更新：旅遊局開會＋司法部正式立案，兩導潛繼續預防性停職 · 🌀颱風薔琵今晚或發海警，台灣東北角潛季窗口縮窄 · 🔦裝備雙發：Halcyon Phaser主燈＋Cressi Da Vinci彩色電腦錶</span><br><span class="upd">更新：2026-10-21</span></span><span class="go">→</span></label>
     </div>
   </div>
@@ -282,48 +282,33 @@
 <div class="focus">
 <h3>⭐ 今日三大重點</h3>
 <ol>
-<li>DeepSeek（10-20）把自家生產級推理引擎 DeepInfer 以 Apache 2.0 開源：支撐 V4.1-Flash 服務、單集群 155T tokens/日，自稱生產吞吐率全球最高；同時支援 Nvidia SM100（Blackwell）同華為 Ascend 950——繼 DHS 禁令之後，中國實驗室打「開源＋華為生態」反擊牌，托管推理（Fireworks/Together/Groq）收費模式受壓</li>
-<li>Google＋Meta（10-20，PyTorch Conference）聯手開源 TorchTPU：PyTorch 原生 TPU backend，<code>.to("cuda")</code> 換成 <code>.to("tpu")</code> 即跑，eager 除錯＋torch.compile 生產；vLLM-TorchTPU、SGLang-TorchTPU、TorchTitan 同 Hugging Face 一併支援，替代老舊 PyTorch/XLA——CUDA 護城河正面迎戰，Meta 已表態要把 LLM／廣告／推薦 workload 推上 Google TPU</li>
-<li>Tenstorrent（10-19）完成 $15 億 Series E，投後估值 $62 億（2024 年 $26 億兩倍幾）：Trace Capital＋Innovation X 領投，ARK、Fidelity、T. Rowe Price、Morgan Stanley、Tether 都落注；Jim Keller 曾同 Intel／Qualcomm 傾收購，最後揀獨立融資。算力融資熱續燃：資金主要部署 Galaxy 伺服器規模化＋服務開源權重模型</li>
+<li>OpenAI（10-21）宣布 frontier 模型＋Codex agentic workflow 進駐 Google Cloud Model Garden，幾星期內 GA：企業客戶可經 Google Cloud Marketplace 購買、動用原有 spend commitment；模型亦會進入 Antigravity 同 Gemini Agent。雲端 AI 分銷版圖大變：OpenAI 模型集齊三大美國雲（Azure／Google Cloud／AWS via Bedrock），Microsoft 仍係「primary cloud partner」</li>
+<li>PHP2Shell（10-21）：兩個 PHP 核心漏洞 CVE-2026-109618／109619，CVSS 4.0 9.2，70% 網站受影響，洩漏迫使原定 10-22 嘅披露提早一日緊急 patch；發現鏈：安全公司 Calif 用 GPT-5.6 Sol（OpenAI「Patch the Planet」計劃）8 月搵到、OpenAI 9 月搵到更完整版本、Wiz 獨立搵到兩個。Greg Brockman 承諾 $10 億補貼安全工具 access＋發草案 playbook；據報芬蘭／荷蘭／法國政府網站曾臨時下線</li>
+<li>WSJ（10-21）見到 Anthropic IPO 招股書草稿：2026 上半年淨虧損逾 $800 億（主因融資協議會計調整，去年同期 $130 億）、半年收入 $163 億（約五分之一嚟自兩個大客）、未來幾年算力開支「潛在 $7,500 億」；IPO 目標估值可達 $2 萬億——AI 賽道「高收入＋天價資本開支」平衡表正式攤上檯</li>
 </ol>
 </div>
 <details class="dsec" open>
 <summary>🚀 模型與產品 <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>DeepSeek 開源生產級推理引擎 DeepInfer：V4.1-Flash 嘅 serving stack，支援 SM100＋Ascend 950</h4>
-<p>10-20 DeepSeek 將自家生產推理框架 DeepInfer 以 Apache 2.0 放上 GitHub（另附 tokenizer deepseek-recipe）：專為 V4.1-Flash 而寫，自帶 FlashMLA、DeepGEMM、DeepEP 等自研 kernel，支援 speculative decoding、structured output（JSON schema／regex／EBNF）同 batch-invariant 模式。官方數字：單集群 155T tokens/日、96% input cache hit、TTFT 約 400ms（未經第三方驗證）。支援 Nvidia SM100 同華為 Ascend 950 兩個硬件家族——華為得到前沿實驗室首個生產級背書。注意：係 offline 推理 only，KV cache 系統／P-D 分離／跨副本負載均衡未開源。背景：上星期 DeepSeek 仲宣布年底前用 Ascend 950 做預訓練。</p>
-<div class="meta"><span class="date-badge">10-20</span><a href="https://www.marktechpost.com/2026/10/20/deepseek-deepinfer-open-source-inference-framework/">MarkTechPost</a> · <a href="https://aiweekly.co/alerts/deepseek-open-sources-deepinfer-its-v41-flash-serving-stack">AI Weekly</a></div>
+<h4>OpenAI 模型＋Codex 進駐 Google Cloud Model Garden：三大雲集齊，仲入 Antigravity／Gemini Agent</h4>
+<p>10-21 雙方同日發帖確認：OpenAI frontier 模型（報道指 GPT-6 Astra／GPT-6.1 Sol／GPT-6 Luna，但官方未確認 exact line-up）＋Codex agentic workflow 將喺「未來幾星期」GA，經 Google Cloud Marketplace 交易，企業原有雲開支 commitment 可直接扣。同一批模型亦會進入 Google 嘅 Antigravity 工具同 Gemini Agent（Antigravity 本來已有 Claude Opus／Sonnet）。Greg Brockman：「make our most capable models and Codex available where customers are already building」；Thomas Kurian：「broad selection of models… optimal quality and lower costs」。戰略意義：OpenAI 正式集齊 Azure、Google Cloud、AWS 三大雲分銷渠道；Anthropic 亦然（Claude 早已在列）——模型商同雲廠商「鬆綁」成 2027 預算季主題。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://9to5google.com/2026/10/21/openai-gpt-models-google-antigravity-cloud/">9to5Google</a> · <a href="https://shattered.io/openai-joins-google-cloud-model-garden-2026/">Shattered（引 CNBC／Axios／Ars Technica）</a></div>
 </div>
 <div class="item">
-<h4>Google＋Meta 開源 TorchTPU：PyTorch 原生跑 TPU，替代 PyTorch/XLA</h4>
-<p>10-20 PyTorch Conference：Google 宣布 TorchTPU 開源（Apache 2.0，v0.2.0），由 2025 年中起同 Meta PyTorch 團隊合作開發。核心改動：原有 PyTorch 程式碼只需將 <code>.to("cuda")</code> 換成 <code>.to("tpu")</code> 即可運行；eager 模式優先（除錯唔再痛苦），torch.compile 經 StableHLO＋XLA 出生產性能；支援 DDP、FSDP2、DTensor 等分佈式 API。Google 稱 TorchTitan 喺 8,192 粒 Ironwood（TPU v7x）上訓練 Qwen 3 8B 達到 52% MFU；vLLM、SGLang、Ray、Hugging Face（Transformers v5 只需 device_map="tpu"）全面打通。Meta PyTorch 工程總監 Jana van Greunen 明言 Meta 唔可以被單一硬件架構綁住——Google TPU 將成 Meta LLM／廣告／推薦 workload 嘅第二落點。</p>
-<div class="meta"><span class="date-badge">10-20</span><a href="https://pytorch.org/blog/introducing-torchtpu/">PyTorch 官方 blog</a> · <a href="https://cryptobriefing.com/google-open-sources-torchtpu-pytorch-tpus/">Crypto Briefing</a></div>
+<h4>Anthropic 推出 Claude Duet：Opus 5.5 主動式 agent research preview，美國 Pro／Max 先上</h4>
+<p>10-21 Anthropic 開放 Claude Duet research preview：主動式 agent，朝早推送跨 app 重點 brief、每幾小時覆檢連接咗嘅帳戶、有事先 ping 你；用戶閂咗 app 都喺佢嘅雲端 VM 繼續做。美國 Pro／Max 用戶 waitlist 排隊、不另收費（但後台任務計入原有用量限額，「用得仲快過純 chat」）。接 6,000+ Claude Marketplace connectors（Gmail、Slack、QuickBooks、Stripe、Shop Pay 等）；購物經 Stripe Link wallet（虛擬卡）或 Shopify Shop Pay，發訊息／付款／簽文件／刪除前一律要先批；證券交易同帳戶間轉帳禁絕。對手對位：OpenAI 上個月嘅「Dots」always-on agents、Meta Muse。可用性注意：暫未上 Team／Enterprise，亦暫唔支援 HK 用戶。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://superhits979.com/2026/10/21/anthropic-unveils-claude-duet-ai-agent-app/">Reuters</a> · <a href="https://9to5mac.com/2026/10/21/anthropic-takes-on-chatgpt-dots-and-meta-muse-with-claude-duet/">9to5Mac</a></div>
 </div>
 <div class="item">
-<h4>Google Gemini Personal Intelligence 登陸車載：Android Auto 今日起、Google built-in 幾個月內</h4>
-<p>10-20 Google 官方 blog：Personal Intelligence 擴展到車載——Android Auto 即日起全球推送，車廠內置 Google（Google built-in）幾個月內跟進。開通後 Gemini 可以讀 Gmail、Calendar、Photos、Maps、YouTube、Search 等連接咗嘅 Google 服務：例「帶我去睇醫生」直接由 calendar 拎地址，機場導航自動提示航班延誤同閘口。Opt-in 設計：預設關、逐個 app 授權、可隨時全關；手機 app 已開 PI 嘅用戶插車自動生效；built-in 車型只在手機喺車內連接時先會俾個人化回答。私隱 caveat：駕駛場景 convenience 壓倒一切，但跨服務數據集中引發評論界關注，睇監管有冇後手。</p>
-<div class="meta"><span class="date-badge">10-20</span><a href="https://blog.google/products-and-platforms/platforms/android/android-auto-cars-with-google-built-in-gemini-personal-intelligence/">Google 官方 blog</a> · <a href="https://thecircuitry.to/article/google-is-working-on-gemini-personal-intelligence-for-android-auto-mvh4u7r8">The Circuitry</a></div>
+<h4>Walmart 迎 AI agent：Agent Gateway＋Agent Profiles，對撞 Amazon 封殺路線</h4>
+<p>10-21 TechCrunch 報道：Walmart 宣布三件套——Agent Gateway（自家 MCP server，俾認可 agent 直接搜 Walmart＋Sam's Club 庫存同下單）、Agent Profiles（每個 AI agent 喺 Walmart 帳戶內有獨立 profile，一個月內上線）、AI agent 使用條款（違規即封）。用戶可要求逐單批准，或設 $50／$100／$200 支出上限；唔使 Walmart+、隨時可刪 profile；agent 唔准攞 payment 資訊。CEO John Furner 喺 Masters of Scale Summit 講。對比鮮明：Amazon 近期開始封第三方購物 agent（連 Muse 都封），只推自家 Alexa for Shopping／Buy for Me。Walmart 早前已同 Muse／ChatGPT／Gemini 整合——agentic commerce 零售戰開打。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/">TechCrunch</a> · <a href="https://www.jamaicaobserver.com/2026/10/21/walmart-welcomes-ai-shopping-agents/">AFP</a></div>
 </div>
 <div class="item">
-<h4>NVIDIA 發布 Cosmos3-H-Dreams：即時手術世界模型，單張 RTX PRO 6000 跑</h4>
-<p>10-20 NVIDIA 喺 Hugging Face 發布 Cosmos3-H-Dreams：首個喺真實臨床膽囊切除錄像＋機械人運動學數據上訓練、支援即時運動控制嘅生成式手術模擬器（數據來自 CMR Surgical Versius 系統）。基於 160 億參數 Cosmos3-H-Embodied-Nano，用 FlashDreams 串流推理庫加速：單張 RTX PRO 6000 上即時生成，2-step checkpoint 約 43fps（832×480）、4-step 約 30fps。開源權重＋code（NVIDIA Open Model License）：定位手術機械人策略仿真評估、可操控世界模型探索、合成數據生成——純視覺動力學學習，NVIDIA 自己都警告唔等於生物力學準確、唔可用於病人。Physical AI 落地醫療培訓賽道。</p>
-<div class="meta"><span class="date-badge">10-20</span><a href="https://huggingface.co/blog/nvidia/cosmos3-h-dreams">NVIDIA（Hugging Face blog）</a> · <a href="https://www.unite.ai/nvidia-releases-cosmos3-h-dreams-real-time-surgical-world-model/">Unite.AI</a></div>
-</div>
-<div class="item">
-<h4>Inception Mercury 3：擴散架構 LLM，宣稱 1,068 tokens/s、贏 Luna／Haiku 5.5</h4>
-<p>10-19 Inception（擴散式語言模型路線，背後 Menlo Ventures、M12、Andrew Ng、Andrej Karpathy）發布 Mercury 3：擴散架構（一次並行生成多 token），公司宣稱喺 Nvidia GPU 上達 1,068 tokens/s、1M context，比 GPT-6 Luna 同 Claude Haiku 5.5 快 4–8 倍，同時 IFBench（76.84）、SWE-Bench Atlas（51.08）等自家評測佔優——全部係 vendor claim，獨立驗證待定。定價 $0.20/$0.70（launch 五折 $0.10/$0.35），已上 Inception API、OpenRouter、Baseten、Vercel，OpenAI API 兼容即換即用。Agent 用戶注意：循環調用場景 latency 係最大成本，擴散路線若跑通會改變「快 vs 準」取捨。</p>
-<div class="meta"><span class="date-badge">10-19</span><a href="https://www.businesswire.com/news/home/20261019090400/en/Inception-Launches-Mercury-3-Setting-a-New-Pareto-Frontier-in-Speed-and-Intelligence">Business Wire（新聞稿）</a> · <a href="https://openrouter.ai/inception/mercury-3">OpenRouter</a></div>
-</div>
-<div class="item">
-<h4>Waymo 進軍馬德里：2027 年歐洲第三城全自動叫車，Jaguar I-PACE 陸續上街</h4>
-<p>10-20 Reuters：Waymo 宣布 2027 年喺馬德里大區推全自動網約車服務，係繼倫敦、慕尼黑（2027 年尾）之後歐洲第三個市場；Jaguar I-PACE 電動車幾日內上街，先有人駕駛、再轉技術驗證。Waymo 現時美國 15 城、每週 50 萬＋付費單、累計 2,000 萬單；官方稱 4 億公里自動駕駛數據嚴重傷亡事故比人類少 95%。同期 Semafor 引述知情人士：Waymo 計劃車隊由約 4,000 輛擴到 2027 年底 20,000 輛——配合早前 $50 億首筆債券融資＋年初 $160 億股權融資。歐洲戰場：西班牙 DGT 上月已批 WeRide＋Uber 測試許可，年底前 commercial 服務預計上線；自動駕駛 robotaxi 進入歐洲軍備競賽。</p>
-<div class="meta"><span class="date-badge">10-20</span><a href="https://www.reuters.com/business/waymo-launch-autonomous-ride-hailing-madrid-next-year-2026-10-20/">Reuters</a> · <a href="https://gizmodo.com/waymo-reportedly-plans-to-put-20000-robotaxis-on-the-road-by-the-end-of-2027-2000828211">Gizmodo（車隊擴張）</a></div>
-</div>
-<div class="item">
-<h4>The Information 預告：新 Anthropic 模型＋Gemini 4 Carbon＋OpenAI Terra 月內齊出（傳聞，待核實）</h4>
-<p>10-20 The Information（paywall）報導：10 月將係新模型密集月——Anthropic 有一款「更識讀用戶意圖」嘅新模型（未命名、發佈日期未披露）、Google 有 Gemini 4 Carbon（Argon 之後升級版，視覺任務強項）、OpenAI 有新 Terra（GPT-5.6 時代中階型號，GPT-6 至今冇出 Terra 版）。三間公司官方全部零確認；報道記者 Stephenie Palazzolo 自己都話部分日期可能滑到 11 月。參考：10-13 Azure 曾短暫出現 Claude Fable 5.5（已撤）。策略性唔好等——傳聞模型常滑期，keep routing 靈活比押注發佈日實際。</p>
-<div class="meta"><span class="date-badge">10-20</span><a href="https://explainx.ai/blog/anthropic-new-model-gemini-4-carbon-openai-terra-the-information-report-what-we-know-2026">ExplainX（報道整理）</a> · <a href="https://www.androidheadlines.com/2026/10/openai-anthropic-google-new-ai-models.html">Android Headlines</a> <span class="tag-warn">傳聞，待核實</span></div>
+<h4>Eternal（Zomato／Blinkit 母公司）宣布 Dark.ai：端到端加密 AI 聊天，年底前全球上線</h4>
+<p>10-21 Eternal Q2 FY27 股東信：推出私隱導向 AI 平台 Dark.ai，賣點端到端加密——「連我哋都睇唔到你嘅對話，就算被迫都睇唔到」；用 fine-tuned frontier open-weight 模型跑喺自家基建，用戶自控加密 memory 層跨 session 記住 context。創辦人 Deepinder Goyal：目標係 founders、researchers、scientists、企業同政府等 power user，「私隱係競爭力嘅必要條件」；內部已試幾個月，benchmark 稍後公布，宣稱「唔會討好你、只會講佢認為係真嘅」。背景：Eternal 想走出外賣／即時零售，Dark.ai 係佢 AI 業務繼 Nugget（客戶支援平台）之後第二步。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://www.tribuneindia.com/news/business/eternal-to-launch-privacy-focused-ai-platform-dark-ai-globally-in-2026/">The Tribune（ANI）</a> · <a href="https://www.financialexpress.com/business/industry-eternal-unveils-privacy-first-ai-assistant-dark-ai-4366301/">Financial Express</a></div>
 </div>
 </div>
 </details>
@@ -331,14 +316,24 @@
 <summary>💰 價格與 API <span class="chev">▼</span></summary>
 <div class="dbody">
 <div class="item">
-<h4>Tenstorrent 完成 $15 億 Series E：投後估值 $62 億，RISC-V 挑戰 Nvidia</h4>
-<p>10-19 Jim Keller 旗下 AI 晶片公司 Tenstorrent 宣布完成 $15 億 Series E（press release via ACN Newswire）：投後估值 $62 億，係 2024 年 $26 億嘅兩倍幾。領投 Trace Capital＋Innovation X，跟投名單 ARK Invest、Fidelity、T. Rowe Price、Morgan Stanley、Cadence、Sandisk、Tether。背景：2026 年初曾同 Intel／Qualcomm 傾收購，Keller 最終揀獨立融資（「對投資人同員工回報最好」）。資金用途：Galaxy 伺服器規模部署、繼續 serve 開源權重 LLM＋影片生成模型、推進授權畀晶片設計商嘅 AI／CPU IP。算力替代敘事續熱：一個架構由單卡賣到 supercluster，open software stack 主打本地／on-prem 部署。</p>
-<div class="meta"><span class="date-badge">10-19</span><a href="https://www.tradingview.com/news/reuters.com,2026-10-19:newsml_ACN110878:0-tenstorrent-announces-a-1-5b-series-e-at-a-6-2b-valuation/">TradingView（ACN Newswire 通稿）</a> · <a href="https://emergent.sh/news/tenstorrent-raises-1-5b-6-2b-valuation-ai">Emergent</a></div>
+<h4>WSJ 披露 Anthropic S-1 草稿：上半年淨虧逾 $800 億、算力開支潛在 $7,500 億、$2T IPO 目標</h4>
+<p>10-21 WSJ 見到嘅 draft prospectus：2026 上半年淨虧損逾 $800 億（主因融資協議會計調整，非現金；去年同期 $130 億）；半年收入 $163 億（季增勢頭延續）、約五分之一嚟自兩個大客，公司預計「可見將來」收入集中少數客戶。公司 signal 未來幾年算力開支「潛在 $7,500 億」（含仍在談判嘅協議）。風險因素：點防止模型造成損害、cyberattack、失控模型勒索等責任。IPO 目標估值可達 $2 萬億——數字攤上檯之後，投資者焦點由「收入增速」轉向「呢筆 $7,500 億點樣畀」。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://www.wsj.com/tech/ai/anthropic-revenue-growth-ipo-accaf0f1">WSJ</a> · <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-10-21-2026/card/anthropic-s-1-shows-plans-for-massive-computing-spend-lMyj0kVJQu1o98723ikX">WSJ（算力開支）</a></div>
 </div>
 <div class="item">
-<h4>OpenAI 收購 Orchestra Bio：AI agent 殺入製藥開發流程，併入 Rosalind</h4>
-<p>10-20 Axios 首報、OpenAI 官網確認：收購 4 歲 AI 生物科技軟件初創 Orchestra Bio（曾融資約 $2,000 萬，Andreessen Horowitz、8VC 等；條款未披露）。Orchestra 唔做分子發現——做「agentic operating layer」：AI agent 監控臨床試驗排期、追蹤開發時間表、模擬生產批次失敗對里程碑嘅連鎖影響再比對應方案，科學家做最終決策。團隊＋技術併入 OpenAI 生命科學套件 Rosalind（已有 Moderna、Novo Nordisk 客戶）。格局：半年前 Anthropic 以約 $4 億買 Coefficient Bio＋推 Claude Science，兩大實驗室由 coding／cybersecurity 殺入醫藥 workflow。OpenAI 今年 biotech 軌跡：4 月 GPT-Rosalind（生命科學專用模型）＋今次收購。</p>
-<div class="meta"><span class="date-badge">10-20</span><a href="https://aiweekly.co/alerts/openai-buys-orchestra-bio-folds-drug-dev-agents-into-rosalind">AI Weekly（引 Axios）</a> · <a href="https://decrypt.co/381467/openai-buys-orchestra-bio-ai-agents-drug-development">Decrypt</a></div>
+<h4>SpaceX Q3：營收 $146 億升 161%，AI 部門「Super Intelligence」首次超越 Starlink</h4>
+<p>10-20 公布（6 月 IPO 後首份盈利季報）：Q3 營收 $146 億（+161%）、淨利潤 $44 億（去年同期虧 $10.5 億）。「Super Intelligence」AI 部門營收 $76 億（年增逾 9 倍），首次超越 Starlink（$52 億）成為最大分部；客戶包括 Anthropic（Colossus 算力 3 年近 $450 億）、Google（$9.2 億／月，2026-10 至 2029-6）。資本開支 $196 億（$164 億投 AI）、Q3 自由現金流負；Musk 預測 2026 年底年化營收約 $1,000 億、2027 年底 $5,000 億至 $1 萬億。同期確認 SpaceX＋Tesla 各成立獨立董事委員會研究合併（約 $3.5T）。投資者 takeaway：Musk 帝國已由「火箭＋衛星」轉成「AI 算力房東」，2027 Q1 指引 $330–370 億（遠超分析師 $220 億）。</p>
+<div class="meta"><span class="date-badge">10-20</span><a href="https://nypost.com/2026/10/20/business/spacex-stock-soars-on-blowout-earnings-that-see-revenue-surge-161-as-musk-talks-tesla-merger/">NY Post</a> · <a href="https://www.satellitetoday.com/finance/2026/10/21/starlink-growth-slows-as-ai-takes-the-lead-at-spacex-in-q3-results/">Via Satellite</a></div>
+</div>
+</div>
+</details>
+<details class="dsec" open>
+<summary>🔬 研究突破 <span class="chev">▼</span></summary>
+<div class="dbody">
+<div class="item">
+<h4>PHP2Shell：AI 搵出史上最嚴重開源漏洞之一，兩漏洞 CVSS 9.2、全球緊急 patch</h4>
+<p>10-21 PHP 發布 8.5.12／8.4.27／8.3.36／8.2.35 緊急更新，修 CVE-2026-109618（out-of-memory corruption）同 CVE-2026-109619（stale global state）：未授權遠程代碼執行，Apache mod_php 下單一請求可觸發、甚至喺應用代碼執行前發動；CVSS v4.0 雙雙 9.2；據報約 70% 網站用 PHP。發現鏈：安全公司 Calif 用 GPT-5.6 Sol（OpenAI「Patch the Planet」計劃）8 月搵到一版、OpenAI 團隊 9 月搵到更完整版、Wiz（Google Cloud 旗下）獨立搵到兩個。原定 10-22 披露，洩漏後提早一日發 patch。Brockman：「Defender's Window」——AI 喺罪犯之前搵到漏洞；同時承認攻擊者亦會用同一能力、未來幾個月同類發現會急增。OpenAI 承諾 $10 億補貼安全工具 access 畀資源有限嘅防守方＋發布 AI 漏洞披露草案 playbook。注意：PHP 8.2 年底 EOL，舊版本用戶要盡快升。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://protos.com/remotely-exploitable-php-bug-found-on-70-of-worlds-websites/">Protos</a> · <a href="https://www.unite.ai/php-patches-two-critical-rce-flaws-found-with-frontier-ai-models/">Unite.AI</a></div>
 </div>
 </div>
 </details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
