@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>每日最新資訊（2026-10-22）</title>
+<style>
+  :root {
+    --bg: #eef1f5; --card: #ffffff; --ink: #1f2937; --muted: #6b7280;
+    --line: #e9edf3; --soft: #fbfcfe; --accent: #1d4ed8;
+    --nav-bg: rgba(255,255,255,.82);
+    --shadow: 0 2px 10px rgba(15,23,42,.06);
+    --shadow-lg: 0 10px 26px rgba(15,23,42,.13);
+    --badge-bg: #eef2ff; --badge-ink: #3730a3;
+    --warn-bg: #fef2f2; --warn-ink: #b91c1c;
+    --link: #2563eb;
+    --focus-bg: #fff8e6; --focus-line: #f0d48a; --focus-h: #92600a; --focus-tx: #5b4a1e;
+    --coach-bg: #ecfeff; --coach-line: #0891b2; --coach-tx: #155e75;
+    --kw-bg: #ecfdf5; --kw-line: #a7f3d0; --kw-tx: #065f46;
+    --pill-bg: #fef3c7; --pill-tx: #92400e;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1120; --card: #131b2e; --ink: #e8edf5; --muted: #9aa5b8;
+      --line: #22304a; --soft: #0f1626; --accent: #6ea8ff;
+      --nav-bg: rgba(19,27,46,.78);
+      --shadow: 0 2px 12px rgba(0,0,0,.4);
+      --shadow-lg: 0 10px 28px rgba(0,0,0,.5);
+      --badge-bg: #1c2a4d; --badge-ink: #b9c8ff;
+      --warn-bg: #3a1d1d; --warn-ink: #fca5a5;
+      --link: #6ea8ff;
+      --focus-bg: #241c0c; --focus-line: #6b5320; --focus-h: #e8b84b; --focus-tx: #d8c08a;
+      --coach-bg: #0e2a33; --coach-line: #22a3c0; --coach-tx: #8fd8ec;
+      --kw-bg: #0d2b1f; --kw-line: #1f5c40; --kw-tx: #7fe0ae;
+      --pill-bg: #2c230d; --pill-tx: #e8b84b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+      "Noto Sans TC", "PingFang HK", "Microsoft JhengHei", sans-serif;
+    font-size: 16px;
+    line-height: 1.95;
+    transition: background .3s ease, color .3s ease;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; padding: 20px 16px 48px; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes heroShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: .45; transform: scale(.72); }
+  }
+  .anim { animation: rise .45s ease backwards; }
+  .livedot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    background: #4ade80; margin-right: 7px; vertical-align: 1px;
+    box-shadow: 0 0 8px #4ade80;
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+
+  /* ---- pure-CSS tabs ---- */
+  .tabradio { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  .tabpanel { display: none; }
+  #tab-overview:checked ~ #panel-overview,
+  #tab-ai:checked ~ #panel-ai,
+  #tab-dive:checked ~ #panel-dive { display: block; animation: rise .45s ease; }
+
+  nav.topnav {
+    position: sticky; top: 8px; z-index: 50; display: flex; gap: 6px; overflow-x: auto;
+    background: var(--nav-bg);
+    -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    backdrop-filter: blur(14px) saturate(1.4);
+    border: 1px solid var(--line);
+    border-radius: 14px; padding: 8px 10px; margin-bottom: 16px;
+    box-shadow: var(--shadow); scrollbar-width: none;
+  }
+  nav.topnav::-webkit-scrollbar { display: none; }
+  nav.topnav label {
+    white-space: nowrap; font-size: 13.5px; font-weight: 600; color: var(--muted);
+    padding: 8px 13px; border-radius: 999px; cursor: pointer;
+    transition: background .18s ease, color .18s ease; user-select: none;
+  }
+  nav.topnav label:hover { background: var(--badge-bg); color: var(--accent); }
+  #tab-overview:checked ~ nav.topnav label[for="tab-overview"],
+  #tab-ai:checked ~ nav.topnav label[for="tab-ai"],
+  #tab-dive:checked ~ nav.topnav label[for="tab-dive"] { background: #1d4ed8; color: #fff; }
+  @media (prefers-color-scheme: dark) {
+    #tab-overview:checked ~ nav.topnav label[for="tab-overview"],
+  #tab-ai:checked ~ nav.topnav label[for="tab-ai"],
+  #tab-dive:checked ~ nav.topnav label[for="tab-dive"] { background: #2f5fe0; color: #fff; }
+  }
+
+  header.hero {
+    position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #334155, #0f172a);
+    background-size: 300% 300%;
+    animation: heroShift 14s ease-in-out infinite alternate;
+    color: #fff; border-radius: 20px; padding: 28px 22px; margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, .3);
+    border: 1px solid rgba(255,255,255,.08);
+  }
+  header.hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(420px 160px at 12% -10%, rgba(96,165,250,.35), transparent 65%),
+      radial-gradient(380px 150px at 92% 112%, rgba(251,191,36,.20), transparent 65%);
+  }
+  header.hero > * { position: relative; }
+  header.hero h1 { margin: 0 0 6px; font-size: 23px; letter-spacing: 1px; font-weight: 800; }
+  header.hero p { margin: 4px 0 0; font-size: 14px; opacity: .92; }
+  .dateline {
+    display: inline-block; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.3);
+    font-size: 12.5px; padding: 3px 12px; border-radius: 999px; margin-top: 10px;
+  }
+
+  /* ---- bento hub grid ---- */
+  .hubgrid { display: grid; gap: 12px; grid-template-columns: 1fr; }
+  @media (min-width: 620px) {
+    .hubgrid { grid-template-columns: 1fr 1fr; }
+    .hubgrid > label.bigcard:first-child { grid-column: 1 / -1; }
+  }
+  label.bigcard {
+    display: flex; align-items: center; gap: 14px; background: var(--card); border-radius: 16px;
+    padding: 17px 18px; color: inherit; cursor: pointer;
+    box-shadow: var(--shadow); border: 1px solid var(--line); border-left: 5px solid #9ca3af;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  label.bigcard:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .bigcard .emoji { font-size: 30px; flex-shrink: 0; }
+  .bigcard .btext { flex: 1; min-width: 0; }
+  .bigcard .btitle { display: block; font-size: 16px; font-weight: 700; }
+  .bigcard .bsub { display: block; font-size: 13px; color: var(--muted); line-height: 1.6; margin: 2px 0 6px; }
+  .upd { display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px;
+    padding: 2px 11px; background: var(--badge-bg); color: var(--badge-ink); }
+  .bigcard .go { font-size: 20px; color: var(--muted); flex-shrink: 0; opacity: .7; }
+
+  section.seccard {
+    background: var(--card); border-radius: 18px; margin: 4px 0 6px; padding: 26px 22px;
+    box-shadow: var(--shadow); border: 1px solid var(--line); border-top: 5px solid #9ca3af;
+  }
+  .sechead h2 { margin: 0 0 8px; font-size: 22px; letter-spacing: .5px; }
+  .sechead p { margin: 0 0 16px; font-size: 14px; color: var(--muted); }
+  .focus {
+    background: var(--focus-bg); border: 1px solid var(--focus-line); border-radius: 14px;
+    padding: 14px 16px; margin-bottom: 16px;
+  }
+  .focus h3 { margin: 0 0 6px; font-size: 14.5px; color: var(--focus-h); }
+  .focus ol { margin: 0; padding-left: 20px; font-size: 14px; color: var(--focus-tx); }
+  .focus li { margin: 4px 0; }
+  details.dsec {
+    border: 1px solid var(--line); border-radius: 14px; margin-bottom: 12px; overflow: hidden;
+    background: var(--card);
+  }
+  details.dsec summary {
+    list-style: none; cursor: pointer; padding: 13px 16px;
+    font-size: 15.5px; font-weight: 700; display: flex; align-items: center; gap: 8px;
+    transition: background .2s ease; user-select: none; background: var(--soft);
+  }
+  details.dsec summary::-webkit-details-marker { display: none; }
+  details.dsec summary:hover { filter: brightness(.97); }
+  details.dsec summary .chev { margin-left: auto; font-size: 12px; color: var(--muted); transition: transform .25s ease; }
+  details.dsec[open] summary .chev { transform: rotate(180deg); }
+  details.dsec .dbody { padding: 4px 12px 12px; }
+  .item {
+    border-left: 4px solid var(--line); border-radius: 10px;
+    padding: 11px 13px; margin: 10px 0; background: var(--soft);
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .item h4 { margin: 0 0 6px; font-size: 16px; line-height: 1.6; color: var(--ink); }
+  .item p { margin: 0 0 8px; font-size: 14.5px; color: var(--muted); }
+  .coach {
+    background: var(--coach-bg); border: 1px dashed var(--coach-line); border-radius: 10px;
+    font-size: 12.5px; color: var(--coach-tx); padding: 7px 11px; margin: 0 0 7px;
+  }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 12px; }
+  .date-badge { background: var(--badge-bg); color: var(--badge-ink); border-radius: 999px; padding: 2px 10px; font-weight: 600; }
+  .tag-warn { background: var(--warn-bg); color: var(--warn-ink); border-radius: 999px; padding: 2px 10px; font-weight: 600; }
+  .meta a { color: var(--link); text-decoration: none; font-weight: 600; }
+  .meta a:hover { text-decoration: underline; }
+  .kw { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 2px 6px; }
+  .kw span {
+    background: var(--kw-bg); border: 1px solid var(--kw-line); color: var(--kw-tx);
+    font-size: 13.5px; font-weight: 600; border-radius: 999px; padding: 5px 14px;
+  }
+  .infocard {
+    background: var(--soft); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px; margin: 16px 0;
+  }
+  .infocard h4 { margin: 0 0 10px; font-size: 16.5px; }
+  .infocard p, .infocard li { font-size: 14.5px; color: var(--muted); }
+  .infocard ul { margin: 8px 0 0; padding-left: 20px; }
+  .infocard li { margin: 7px 0; }
+  /* 運勢圖表：純 CSS 橫條，無 JS */
+  .meter { margin: 6px 0 2px; }
+  .meter .mrow { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+  .meter .mlabel { font-size: 15px; font-weight: 700; color: var(--ink); width: 88px; flex-shrink: 0; }
+  .meter .mbar { flex: 1; height: 13px; background: var(--line); border-radius: 999px; overflow: hidden; }
+  .meter .mfill { height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+  .meter .mfill.high { background: linear-gradient(90deg, #34d399, #10b981); }
+  .meter .mfill.low { background: linear-gradient(90deg, #fca5a5, #f87171); }
+  .meter .mval { font-size: 13px; font-weight: 700; color: var(--muted); width: 58px;
+    text-align: right; flex-shrink: 0; }
+  .verdict {
+    font-size: 17px; font-weight: 800; color: var(--ink); text-align: center;
+    padding: 12px 8px 4px; line-height: 1.7;
+  }
+  .do-dont { display: flex; flex-direction: column; gap: 8px; margin-top: 6px; }
+  .do-dont .dd { font-size: 14.5px; padding: 10px 14px; border-radius: 12px; line-height: 1.7; }
+  .do-dont .dd.do { background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+  .do-dont .dd.dont { background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+  @media (prefers-color-scheme: dark) {
+    .do-dont .dd.do { background: #0c2b22; border-color: #14532d; color: #a7f3d0; }
+    .do-dont .dd.dont { background: #2b1212; border-color: #7f1d1d; color: #fca5a5; }
+  }
+  .pill {
+    display: inline-block; font-size: 12px; font-weight: 700; border-radius: 999px;
+    padding: 3px 11px; background: var(--pill-bg); color: var(--pill-tx); margin-bottom: 8px;
+  }
+  .secfoot { text-align: center; margin-top: 12px; }
+  label.totop {
+    display: inline-block; color: var(--link); cursor: pointer;
+    font-size: 13px; font-weight: 600; border: 1px solid var(--line); border-radius: 999px; padding: 6px 18px;
+    background: var(--card); transition: filter .2s ease; user-select: none;
+  }
+  label.totop:hover { filter: brightness(.96); }
+  /* 分頁切換時內容逐張浮入 */
+  .tabpanel .item, .tabpanel .infocard { animation: rise .5s ease backwards; }
+  .tabpanel .dbody .item:nth-child(1) { animation-delay: .04s; }
+  .tabpanel .dbody .item:nth-child(2) { animation-delay: .1s; }
+  .tabpanel .dbody .item:nth-child(3) { animation-delay: .16s; }
+  .tabpanel .dbody .item:nth-child(4) { animation-delay: .22s; }
+  .tabpanel .dbody .item:nth-child(5) { animation-delay: .28s; }
+  .tabpanel .dbody .item:nth-child(6) { animation-delay: .34s; }
+  .tabpanel .dbody .item:nth-child(7) { animation-delay: .4s; }
+  .tabpanel .dbody .item:nth-child(8) { animation-delay: .46s; }
+  .tabpanel .infocard { animation-delay: .08s; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  footer.pagefoot { text-align: center; font-size: 12px; color: var(--muted); margin-top: 26px; line-height: 1.9; opacity: .8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <input class="tabradio" type="radio" name="dtabs" id="tab-overview" checked>
+  <input class="tabradio" type="radio" name="dtabs" id="tab-ai">
+  <input class="tabradio" type="radio" name="dtabs" id="tab-dive">
+
+  <nav class="topnav">
+    <label for="tab-overview">🏠 總覽</label>
+    <label for="tab-ai">🤖 AI新聞</label>
+    <label for="tab-dive">🤿 潛水新聞</label>
+  </nav>
+
+  <div class="tabpanel" id="panel-overview">
+    <header class="hero anim">
+      <h1>📰 每日最新資訊</h1>
+      <p>撳上面導航或下面卡片，即切換分類（純 CSS，免 JS）</p>
+      <span class="dateline"><span class="livedot"></span>2026-10-22 · 今日版</span>
+    </header>
+    <div class="hubgrid">
+    <label class="bigcard anim" for="tab-ai" style="border-left-color:#2563eb"><span class="emoji">🤖</span><span class='btext'><span class='btitle'>🤖 AI 新聞動向</span><span class="bsub">OpenAI 模型登陸 Google Cloud Model Garden：三大美國雲全集齊，仲入埋 Antigravity＋Gemini Agent · AI 搵到史上最嚴重開源漏洞之一 PHP2Shell（CVE-2026-109618/619，CVSS 9.2），10-21 緊急 patch · Anthropic S-1 草稿曝光：上半年淨虧損逾 $800 億、未來算力開支或達 $7,500 億</span><br><span class="upd">更新：2026-10-22</span></span><span class="go">→</span></label>
+<label class="bigcard anim" for="tab-dive" style="border-left-color:#0891b2"><span class="emoji">🤿</span><span class='btext'><span class='btitle'>🤿 潛水新聞</span><span class="bsub">⚠️科摩多Feronia搜救進入最終日：五水域禁航＋軍艦聲納掃海底，截至10/18黃昏Jessica同船體仍未尋獲 · 🏝️帛琉彈頭案10/20官方更新：旅遊局開會＋司法部正式立案，兩導潛繼續預防性停職 · 🌀颱風薔琵今晚或發海警，台灣東北角潛季窗口縮窄 · 🔦裝備雙發：Halcyon Phaser主燈＋Cressi Da Vinci彩色電腦錶</span><br><span class="upd">更新：2026-10-21</span></span><span class="go">→</span></label>
+    </div>
+  </div>
+
+  <div class="tabpanel" id="panel-ai"><section class="seccard anim" style="border-top-color:#2563eb"><div class="sechead">
+<h2>🤖 AI 新聞動向</h2>
+<p>最新資訊優先 · 每日更新 · 有出處先報</p>
+</div>
+<div class="focus">
+<h3>⭐ 今日三大重點</h3>
+<ol>
+<li>OpenAI（10-21）宣布 frontier 模型＋Codex agentic workflow 進駐 Google Cloud Model Garden，幾星期內 GA：企業客戶可經 Google Cloud Marketplace 購買、動用原有 spend commitment；模型亦會進入 Antigravity 同 Gemini Agent。雲端 AI 分銷版圖大變：OpenAI 模型集齊三大美國雲（Azure／Google Cloud／AWS via Bedrock），Microsoft 仍係「primary cloud partner」</li>
+<li>PHP2Shell（10-21）：兩個 PHP 核心漏洞 CVE-2026-109618／109619，CVSS 4.0 9.2，70% 網站受影響，洩漏迫使原定 10-22 嘅披露提早一日緊急 patch；發現鏈：安全公司 Calif 用 GPT-5.6 Sol（OpenAI「Patch the Planet」計劃）8 月搵到、OpenAI 9 月搵到更完整版本、Wiz 獨立搵到兩個。Greg Brockman 承諾 $10 億補貼安全工具 access＋發草案 playbook；據報芬蘭／荷蘭／法國政府網站曾臨時下線</li>
+<li>WSJ（10-21）見到 Anthropic IPO 招股書草稿：2026 上半年淨虧損逾 $800 億（主因融資協議會計調整，去年同期 $130 億）、半年收入 $163 億（約五分之一嚟自兩個大客）、未來幾年算力開支「潛在 $7,500 億」；IPO 目標估值可達 $2 萬億——AI 賽道「高收入＋天價資本開支」平衡表正式攤上檯</li>
+</ol>
+</div>
+<details class="dsec" open>
+<summary>🚀 模型與產品 <span class="chev">▼</span></summary>
+<div class="dbody">
+<div class="item">
+<h4>OpenAI 模型＋Codex 進駐 Google Cloud Model Garden：三大雲集齊，仲入 Antigravity／Gemini Agent</h4>
+<p>10-21 雙方同日發帖確認：OpenAI frontier 模型（報道指 GPT-6 Astra／GPT-6.1 Sol／GPT-6 Luna，但官方未確認 exact line-up）＋Codex agentic workflow 將喺「未來幾星期」GA，經 Google Cloud Marketplace 交易，企業原有雲開支 commitment 可直接扣。同一批模型亦會進入 Google 嘅 Antigravity 工具同 Gemini Agent（Antigravity 本來已有 Claude Opus／Sonnet）。Greg Brockman：「make our most capable models and Codex available where customers are already building」；Thomas Kurian：「broad selection of models… optimal quality and lower costs」。戰略意義：OpenAI 正式集齊 Azure、Google Cloud、AWS 三大雲分銷渠道；Anthropic 亦然（Claude 早已在列）——模型商同雲廠商「鬆綁」成 2027 預算季主題。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://9to5google.com/2026/10/21/openai-gpt-models-google-antigravity-cloud/">9to5Google</a> · <a href="https://shattered.io/openai-joins-google-cloud-model-garden-2026/">Shattered（引 CNBC／Axios／Ars Technica）</a></div>
+</div>
+<div class="item">
+<h4>Anthropic 推出 Claude Duet：Opus 5.5 主動式 agent research preview，美國 Pro／Max 先上</h4>
+<p>10-21 Anthropic 開放 Claude Duet research preview：主動式 agent，朝早推送跨 app 重點 brief、每幾小時覆檢連接咗嘅帳戶、有事先 ping 你；用戶閂咗 app 都喺佢嘅雲端 VM 繼續做。美國 Pro／Max 用戶 waitlist 排隊、不另收費（但後台任務計入原有用量限額，「用得仲快過純 chat」）。接 6,000+ Claude Marketplace connectors（Gmail、Slack、QuickBooks、Stripe、Shop Pay 等）；購物經 Stripe Link wallet（虛擬卡）或 Shopify Shop Pay，發訊息／付款／簽文件／刪除前一律要先批；證券交易同帳戶間轉帳禁絕。對手對位：OpenAI 上個月嘅「Dots」always-on agents、Meta Muse。可用性注意：暫未上 Team／Enterprise，亦暫唔支援 HK 用戶。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://superhits979.com/2026/10/21/anthropic-unveils-claude-duet-ai-agent-app/">Reuters</a> · <a href="https://9to5mac.com/2026/10/21/anthropic-takes-on-chatgpt-dots-and-meta-muse-with-claude-duet/">9to5Mac</a></div>
+</div>
+<div class="item">
+<h4>Walmart 迎 AI agent：Agent Gateway＋Agent Profiles，對撞 Amazon 封殺路線</h4>
+<p>10-21 TechCrunch 報道：Walmart 宣布三件套——Agent Gateway（自家 MCP server，俾認可 agent 直接搜 Walmart＋Sam's Club 庫存同下單）、Agent Profiles（每個 AI agent 喺 Walmart 帳戶內有獨立 profile，一個月內上線）、AI agent 使用條款（違規即封）。用戶可要求逐單批准，或設 $50／$100／$200 支出上限；唔使 Walmart+、隨時可刪 profile；agent 唔准攞 payment 資訊。CEO John Furner 喺 Masters of Scale Summit 講。對比鮮明：Amazon 近期開始封第三方購物 agent（連 Muse 都封），只推自家 Alexa for Shopping／Buy for Me。Walmart 早前已同 Muse／ChatGPT／Gemini 整合——agentic commerce 零售戰開打。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://techcrunch.com/2026/10/21/while-amazon-blocks-ai-agents-walmart-rolls-out-the-welcome-mat/">TechCrunch</a> · <a href="https://www.jamaicaobserver.com/2026/10/21/walmart-welcomes-ai-shopping-agents/">AFP</a></div>
+</div>
+<div class="item">
+<h4>Eternal（Zomato／Blinkit 母公司）宣布 Dark.ai：端到端加密 AI 聊天，年底前全球上線</h4>
+<p>10-21 Eternal Q2 FY27 股東信：推出私隱導向 AI 平台 Dark.ai，賣點端到端加密——「連我哋都睇唔到你嘅對話，就算被迫都睇唔到」；用 fine-tuned frontier open-weight 模型跑喺自家基建，用戶自控加密 memory 層跨 session 記住 context。創辦人 Deepinder Goyal：目標係 founders、researchers、scientists、企業同政府等 power user，「私隱係競爭力嘅必要條件」；內部已試幾個月，benchmark 稍後公布，宣稱「唔會討好你、只會講佢認為係真嘅」。背景：Eternal 想走出外賣／即時零售，Dark.ai 係佢 AI 業務繼 Nugget（客戶支援平台）之後第二步。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://www.tribuneindia.com/news/business/eternal-to-launch-privacy-focused-ai-platform-dark-ai-globally-in-2026/">The Tribune（ANI）</a> · <a href="https://www.financialexpress.com/business/industry-eternal-unveils-privacy-first-ai-assistant-dark-ai-4366301/">Financial Express</a></div>
+</div>
+</div>
+</details>
+<details class="dsec" open>
+<summary>💰 價格與 API <span class="chev">▼</span></summary>
+<div class="dbody">
+<div class="item">
+<h4>WSJ 披露 Anthropic S-1 草稿：上半年淨虧逾 $800 億、算力開支潛在 $7,500 億、$2T IPO 目標</h4>
+<p>10-21 WSJ 見到嘅 draft prospectus：2026 上半年淨虧損逾 $800 億（主因融資協議會計調整，非現金；去年同期 $130 億）；半年收入 $163 億（季增勢頭延續）、約五分之一嚟自兩個大客，公司預計「可見將來」收入集中少數客戶。公司 signal 未來幾年算力開支「潛在 $7,500 億」（含仍在談判嘅協議）。風險因素：點防止模型造成損害、cyberattack、失控模型勒索等責任。IPO 目標估值可達 $2 萬億——數字攤上檯之後，投資者焦點由「收入增速」轉向「呢筆 $7,500 億點樣畀」。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://www.wsj.com/tech/ai/anthropic-revenue-growth-ipo-accaf0f1">WSJ</a> · <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-10-21-2026/card/anthropic-s-1-shows-plans-for-massive-computing-spend-lMyj0kVJQu1o98723ikX">WSJ（算力開支）</a></div>
+</div>
+<div class="item">
+<h4>SpaceX Q3：營收 $146 億升 161%，AI 部門「Super Intelligence」首次超越 Starlink</h4>
+<p>10-20 公布（6 月 IPO 後首份盈利季報）：Q3 營收 $146 億（+161%）、淨利潤 $44 億（去年同期虧 $10.5 億）。「Super Intelligence」AI 部門營收 $76 億（年增逾 9 倍），首次超越 Starlink（$52 億）成為最大分部；客戶包括 Anthropic（Colossus 算力 3 年近 $450 億）、Google（$9.2 億／月，2026-10 至 2029-6）。資本開支 $196 億（$164 億投 AI）、Q3 自由現金流負；Musk 預測 2026 年底年化營收約 $1,000 億、2027 年底 $5,000 億至 $1 萬億。同期確認 SpaceX＋Tesla 各成立獨立董事委員會研究合併（約 $3.5T）。投資者 takeaway：Musk 帝國已由「火箭＋衛星」轉成「AI 算力房東」，2027 Q1 指引 $330–370 億（遠超分析師 $220 億）。</p>
+<div class="meta"><span class="date-badge">10-20</span><a href="https://nypost.com/2026/10/20/business/spacex-stock-soars-on-blowout-earnings-that-see-revenue-surge-161-as-musk-talks-tesla-merger/">NY Post</a> · <a href="https://www.satellitetoday.com/finance/2026/10/21/starlink-growth-slows-as-ai-takes-the-lead-at-spacex-in-q3-results/">Via Satellite</a></div>
+</div>
+</div>
+</details>
+<details class="dsec" open>
+<summary>🔬 研究突破 <span class="chev">▼</span></summary>
+<div class="dbody">
+<div class="item">
+<h4>PHP2Shell：AI 搵出史上最嚴重開源漏洞之一，兩漏洞 CVSS 9.2、全球緊急 patch</h4>
+<p>10-21 PHP 發布 8.5.12／8.4.27／8.3.36／8.2.35 緊急更新，修 CVE-2026-109618（out-of-memory corruption）同 CVE-2026-109619（stale global state）：未授權遠程代碼執行，Apache mod_php 下單一請求可觸發、甚至喺應用代碼執行前發動；CVSS v4.0 雙雙 9.2；據報約 70% 網站用 PHP。發現鏈：安全公司 Calif 用 GPT-5.6 Sol（OpenAI「Patch the Planet」計劃）8 月搵到一版、OpenAI 團隊 9 月搵到更完整版、Wiz（Google Cloud 旗下）獨立搵到兩個。原定 10-22 披露，洩漏後提早一日發 patch。Brockman：「Defender's Window」——AI 喺罪犯之前搵到漏洞；同時承認攻擊者亦會用同一能力、未來幾個月同類發現會急增。OpenAI 承諾 $10 億補貼安全工具 access 畀資源有限嘅防守方＋發布 AI 漏洞披露草案 playbook。注意：PHP 8.2 年底 EOL，舊版本用戶要盡快升。</p>
+<div class="meta"><span class="date-badge">10-21</span><a href="https://protos.com/remotely-exploitable-php-bug-found-on-70-of-worlds-websites/">Protos</a> · <a href="https://www.unite.ai/php-patches-two-critical-rce-flaws-found-with-frontier-ai-models/">Unite.AI</a></div>
+</div>
+</div>
+</details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
+<div class="tabpanel" id="panel-dive"><section class="seccard anim" style="border-top-color:#0891b2"><div class="sechead">
+  <h2>🤿 潛水新聞</h2>
+  <p>全球熱點 · 亞洲／中國／台灣 · 潛水員關鍵字</p>
+</div>
+<div class="focus">
+  <h3>⭐ 今日三大重點</h3>
+  <ol>
+    <li>⚠️ 科摩多 KM Feronia 搜救進入最終日（10/18–19）：聯合搜救進入第 6 天（原定最終日），Labuan Bajo 港務局禁止旅遊船進入五個搜索水域；印尼海軍掃雷艦 KRI Pulau Fani-731 用 300 米級聲納掃海底。截至 10/18 黃昏，23 歲女潛導 Veronica Beatrix Jessica 同 Feronia 船體都未搵到；碼頭當晚有家屬同市民燭光祈禱</li>
+    <li>🏝️ 帛琉彈頭水下襲擊案 10/20 官方更新：Palau 旅遊局（BOT）10/20 來信 The Scuba News Asia——當天同相關夥伴開會討論 Siaes Corner 事件；調查繼續（等公共安全局正式報告）；已透過司法部正式立案投訴；兩名涉事導潛繼續預防性暫停潛水及旅遊工作，暫停不等於認定有罪</li>
+    <li>🌀 颱風薔琵逼近台灣（10/20）：最快 21 日深夜發海警，21 日台馬、島際、小三通航班已有異動——台灣東北角潛季窗口收窄。另裝備雙發：Halcyon Phaser 主潛水燈開售（聚光束／150 米防水／US$949）、Cressi Da Vinci 彩色潛水電腦錶（Bühlmann ZHL-16C＋可調 gradient factor）</li>
+  </ol>
+</div>
+<details class="dsec" open>
+  <summary>🌊 全球 <span class="chev">▼</span></summary>
+  <div class="dbody">
+    <div class="item">
+      <h4>⚠️ 科摩多 KM Feronia 搜救進入最終日：五水域禁旅遊船＋軍艦聲納掃海底，仍未尋獲（10/18–19）</h4>
+      <p>jawawa 10/18–19：搜救進入第 6 天（原定最終日），港務局禁止旅遊船同遊客進入五個搜索水域；印尼海軍 KRI Pulau Fani-731 用可達 300 米深聲納掃 Batu Bolong 沉船水域。警方同時調查可能疏忽：Feronia 船身短而艙室高，強流下極易翻覆。截至 10/18 17:30（印尼中部時間），Jessica 同船體都未搵到；10/18 晚家屬、搜救人員同數十名 Labuan Bajo 市民喺碼頭燭光祈禱。</p>
+      <div class="coach">💡 教練提示：選潛水船要睇船身結構——呢單證明「船型」係安全指標：短船身＋高艙室＋強流水域＝高危組合。11 月兩個團嘅行程單，可以加一條「遇強流／船況不符標準即取消或改期」嘅明文準則，唔靠目測做決定。</div>
+      <div class="meta"><span class="date-badge">跟進 10-18–19</span><span class="tag-warn">高可信度 · jawawa（現場報道）</span><a href="https://jawawa.id/newsitem/search-for-jessica-enters-final-day-as-tourist-boats-barred-from-five-waters-1792378621">jawawa 搜救最終日</a> <a href="https://jawawa.id/newsitem/conditions-at-the-site-where-jessica-went-missing-in-komodo-national-park-calm-surface-strong-currents-1792335013">水面平靜水下強流直擊</a></div>
+    </div>
+    <div class="item">
+      <h4>🔦 裝備：Halcyon Phaser 主潛水燈開售（10/20）</h4>
+      <p>DeeperBlue 10/20：Halcyon Phaser 主燈正式開售——技術潛水兼日常探索用，聚光束、內置 29 Wh 充電電池＋USB-C（仲可反向幫電話／潛腦充電）、1 米 50,000 lux、150 米防水；高／低兩檔（高檔 2 小時＋、低檔 6 小時）、折疊 Goodman 手柄、旅行鎖防誤觸；US$949（未稅）。</p>
+      <div class="coach">💡 教練提示：主燈＋備燈係夜潛／沉船／洞穴必備——帶團出發前裝備 checklist 加一格「燈：電池滿＋備燈有」，薄荷 Balicasag 清晨潛都用得着。</div>
+      <div class="meta"><span class="date-badge">10-20</span><span class="tag-warn">中高可信度 · DeeperBlue（廠商發布）</span><a href="https://www.deeperblue.com/halcyon-dive-systems-phaser-primary-dive-light-now-available/">DeeperBlue</a></div>
+    </div>
+    <div class="item">
+      <h4>⌚ 裝備：Cressi Da Vinci 彩色潛水電腦錶（10/19）</h4>
+      <p>DeeperBlue 10/19：Cressi 新錶 Da Vinci——1.54 吋全彩 TFT 大字顯示，跑 Bühlmann ZHL-16C 算法、可調 gradient factor；Air／Nitrox／Gauge 三模式、支援 4 種氣體（22–99%＋純氧加速減壓）、內置指南針、USB-C 充電＋藍牙連 DiveSync app；兩鍵機械式（戴厚手套都㩒到）。</p>
+      <div class="meta"><span class="date-badge">10-19</span><span class="tag-warn">中高可信度 · DeeperBlue（廠商發布）</span><a href="https://www.deeperblue.com/cressi-highlights-da-vinci-dive-computer-with-high-contrast-color-display/">DeeperBlue</a></div>
+    </div>
+    <div class="item">
+      <h4>🏛️ 沉船發現：英國 Cromer 海岸水下中世紀防禦工事（10/18）</h4>
+      <p>DeeperBlue 10/18：潛水員喺英國 Cromer 海岸外發現沉沒嘅中世紀防禦工事遺跡——水下考古新發現。</p>
+      <div class="meta"><span class="date-badge">10-18</span><span class="tag-warn">中可信度 · DeeperBlue</span><a href="http://deeperblue.com/category/scuba-diving/">DeeperBlue 潛水版</a></div>
+    </div>
+    <div class="item">
+      <h4>🪸 保育：昆士蘭海草床回彈＋BC 省原住民海帶苗圃（10/19–20）</h4>
+      <p>DeeperBlue：澳洲昆士蘭海草床出現回彈跡象（10/20）；加拿大 BC 省原住民海帶苗圃計劃收復海域（10/19）——保育修復案例。</p>
+      <div class="coach">💡 教練提示：帛琉保育氛圍濃，呢啲修復案例係帶團做海洋保育 briefing 嘅好素材——「珊瑚／海草識復原，但前提係唔好再破壞」，落水前講一次。</div>
+      <div class="meta"><span class="date-badge">10-19–20</span><span class="tag-warn">中可信度 · DeeperBlue</span><a href="http://deeperblue.com/category/ocean/">DeeperBlue 海洋版</a></div>
+    </div>
+    <div class="item">
+      <h4>自由潛水 Me Too 跟進：FII 建議自願停職、審查繼續（10/20 更新）</h4>
+      <p>DeeperBlue 10/20 更新：FII 表示截至 10/18 涉事教練未有正式停職或協議停職生效，已建議其自願停職直至審查結束；Tania Panes 陳述有更新；DeeperBlue FB 亦出咗 8 格懶人包系列（10/20）。</p>
+      <div class="meta"><span class="date-badge">10-20</span><span class="tag-warn">高可信度 · DeeperBlue（直接引述機構）</span><a href="https://www.deeperblue.com/freediving-me-too-moment-women-speak-out/">DeeperBlue 專題</a></div>
+    </div>
+    <div class="item">
+      <h4>社群傳聞：IG reel 指軍艦聲納喺 Batu Bolong 600 米外偵測到不明物體（10/19）</h4>
+      <p>IG @letsdivekomodo（2.4 萬追隨者潛水業者）10/19 reel：聲稱 KRI Pulau Fani-731 嘅水下聲納喺熱門潛點 Batu Bolong 約 600 米外偵測到一個物體，搜救仍繼續。</p>
+      <div class="meta"><span class="date-badge">10-19</span><span class="tag-warn">低可信度 · 社群傳聞（業者 IG reel，未經官方證實）</span><a href="https://www.instagram.com/reel/DerDFJjT_yl/">IG reel</a></div>
+    </div>
+  </div>
+</details>
+<details class="dsec" open>
+  <summary>🏝️ 亞洲 · 中國 · 台灣 <span class="chev">▼</span></summary>
+  <div class="dbody">
+    <div class="item">
+      <h4>🏝️ 帛琉彈頭水下襲擊案 10/20 官方更新：司法部正式立案，兩導潛續停職</h4>
+      <p>The Scuba News Asia 10/20 更新：Palau 旅遊局（BOT）10/20 來信確認——當天已同相關夥伴開會討論 Siaes Corner 事件；調查繼續進行，等緊公共安全局（Bureau of Public Safety）正式報告；已透過司法部（Ministry of Justice）正式立案投訴；兩名直接涉事導潛繼續預防性暫停潛水及旅遊相關工作，官方強調暫停不等於認定有罪。</p>
+      <div class="coach">💡 教練提示：11/24–28 帛琉團直接相關——當地正嚴肅處理導潛糾紛，執法氣氛緊。出發前同團員講清楚水下禮儀：唔插隊熱門潛點、唔掂人哋裝備、有爭執上船後循正規途徑投訴，唔好喺水下「私了」。另提醒：當地導潛同業者關係緊張，外來團低調守規矩最穩陣。</div>
+      <div class="meta"><span class="date-badge">10-20</span><span class="tag-warn">高可信度 · The Scuba News Asia（引 Palau 旅遊局官方來信）</span><a href="https://www.thescubanews.com/2026/10/16/palau-dive-guides-underwater-assault-investigation/">The Scuba News Asia</a></div>
+    </div>
+    <div class="item">
+      <h4>🌀 颱風薔琵逼近：最快今晚發海警，台灣 21 日海陸交通異動</h4>
+      <p>中央社／udn 10/20：颱風薔琵持續增強，最快 21 日深夜發海上颱風警報；連江縣宣布 21 日台馬、島際（南竿–莒光／東引班次部分停航）、小三通（南竿–琅岐、北竿–黃岐全日停航）航班異動。台北市預估 23 日（週五）影響最大。</p>
+      <div class="coach">💡 教練提示：東北角潛季尾聲窗口收窄——如有團員近期去台灣潛水，提醒海警前後唔好落水、留意東北季風＋颱風外圍環流疊加嘅湧浪；澳門這邊 11 月團暫時未受影響，但要開始睇住西北太平洋颱風動向。</div>
+      <div class="meta"><span class="date-badge">10-20</span><span class="tag-warn">高可信度 · 中央社／udn</span><a href="https://udn.com/news/story/7266/9826982">udn</a></div>
+    </div>
+    <div class="item">
+      <h4>社群傳聞：彈頭帛琉事件中文社群圖文持續流傳（10/19）</h4>
+      <p>FB 中文圖文（10/19）：「帛琉深潛爆衝突，南拳媽媽彈頭遇襲，導潛二級頭被扯」合成圖文喺中文社群流傳；Threads @hmetromy（馬來西亞 Harian Metro 官方帳號）亦轉發相關新聞提醒。官方調查進展以旅遊局 10/20 更新為準，社群版本有渲染成分。</p>
+      <div class="meta"><span class="date-badge">10-19</span><span class="tag-warn">低可信度 · 社群傳聞（渲染成分）</span></div>
+    </div>
+  </div>
+</details>
+<details class="dsec" open>
+  <summary>🔑 潛水員關鍵字 <span class="chev">▼</span></summary>
+  <div class="dbody">
+    <div class="kw">
+      <span>Feronia搜救最終日</span>
+      <span>五水域禁航</span>
+      <span>聲納不明物體（社群傳聞）</span>
+      <span>帛琉彈頭案司法部立案</span>
+      <span>颱風薔琵海警</span>
+      <span>Halcyon Phaser主燈</span>
+      <span>Cressi Da Vinci電腦錶</span>
+      <span>FII自願停職</span>
+    </div>
+  </div>
+</details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
+
+  <footer class="pagefoot">
+    每日自動更新 · 所有內容附來源 · 僅供參考<br>
+    投資組合完整報告喺專屬 chat 派發；公開版唔含運程同組合欄
+  </footer>
+
+</div>
+</body>
+</html>
