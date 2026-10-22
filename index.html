@@ -67,7 +67,8 @@
   }
 
   /* ---- pure-CSS tabs ---- */
-  .tabradio { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+  /* radio 放喺文件最頂（top:0），撳 label 嗰陣瀏覽器有機會將焦點捲返上頂；唔好加 pointer-events:none，會阻住 focus */
+  .tabradio { position: absolute; top: 0; left: 0; width: 1px; height: 1px; opacity: 0; }
   .tabpanel { display: none; }
   #tab-overview:checked ~ #panel-overview,
   #tab-ai:checked ~ #panel-ai,
@@ -233,6 +234,16 @@
     background: var(--card); transition: filter .2s ease; user-select: none;
   }
   label.totop:hover { filter: brightness(.96); }
+  /* 分頁底部快速導航：直接跳欄＋返頂部，唔使逐版碌返上去 */
+  .botnav { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 6px; }
+  .botnav label, .botnav a {
+    font-size: 12.5px; font-weight: 600; color: var(--link); cursor: pointer;
+    border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px;
+    background: var(--card); text-decoration: none; user-select: none;
+    transition: filter .2s ease;
+  }
+  .botnav label:hover, .botnav a:hover { filter: brightness(.96); }
+  html { scroll-behavior: smooth; }
   /* 分頁切換時內容逐張浮入 */
   .tabpanel .item, .tabpanel .infocard { animation: rise .5s ease backwards; }
   .tabpanel .dbody .item:nth-child(1) { animation-delay: .04s; }
@@ -251,7 +262,7 @@
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" id="digest-top">
 
   <input class="tabradio" type="radio" name="dtabs" id="tab-overview" checked>
   <input class="tabradio" type="radio" name="dtabs" id="tab-ai">
@@ -336,7 +347,7 @@
 <div class="meta"><span class="date-badge">10-21</span><a href="https://www.prnewswire.com/news-releases/perturbai-and-openai-unveil-first-of-its-kind-ai-reasoning-agents-to-scale-biomedical-discovery-302914929.html">PRNewswire（官方稿）</a> · <a href="https://firstwordpharma.com/story/8251747">FirstWord Pharma</a></div>
 </div>
 </div>
-</details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
+</details></section><div class="secfoot"><div class="botnav"><label for="tab-overview">🏠 總覽</label><label for="tab-ai">🤖 AI新聞</label><label for="tab-dive">🤿 潛水新聞</label><a href="#digest-top">🔝 頂部</a></div></div></div>
 <div class="tabpanel" id="panel-dive"><section class="seccard anim" style="border-top-color:#0891b2"><div class="sechead">
   <h2>🤿 潛水新聞</h2>
   <p>全球熱點 · 亞洲／中國／台灣 · 潛水員關鍵字</p>
@@ -426,7 +437,7 @@
       <span>新北公安潛水複訓</span>
     </div>
   </div>
-</details></section><div class="secfoot"><label class="totop" for="tab-overview">🔝 回到總覽</label></div></div>
+</details></section><div class="secfoot"><div class="botnav"><label for="tab-overview">🏠 總覽</label><label for="tab-ai">🤖 AI新聞</label><label for="tab-dive">🤿 潛水新聞</label><a href="#digest-top">🔝 頂部</a></div></div></div>
 
   <footer class="pagefoot">
     每日自動更新 · 所有內容附來源 · 僅供參考<br>
